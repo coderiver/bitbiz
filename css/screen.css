@@ -287,9 +287,12 @@ a { text-decoration: none; }
 .icons a.is-heart { background: url("../img/svg/siteheart.svg") no-repeat 0 0; -moz-background-size: 71px 51px; -o-background-size: 71px 51px; -webkit-background-size: 71px 51px; background-size: 71px 51px; width: 71px; height: 51px; display: inline-block; }
 
 body.is-fixed { padding: 113px 0 0 0; }
-body.is-fixed .header { position: fixed; top: 0; left: 0; right: 0; z-index: 999; }
-body.is-fixed .icons { right: 0; }
+body.is-fixed .header { z-index: 999; }
+body.is-icons .icons { right: 0; }
 body.no-scroll .icons { right: 0; }
+
+.header.is-fixed { position: fixed; top: -113px; left: 0; right: 0; -moz-transition: top 0.5s; -o-transition: top 0.5s; -webkit-transition: top 0.5s; transition: top 0.5s; }
+.header.is-active { top: 0; }
 
 .popup { position: fixed; top: 0; right: 0; left: 0; bottom: 0; padding: 10px; z-index: 9997; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; font-size: 0; -moz-transition: opacity 0.5s, visibility 0.5s; -o-transition: opacity 0.5s, visibility 0.5s; -webkit-transition: opacity 0.5s, visibility 0.5s; transition: opacity 0.5s, visibility 0.5s; overflow: auto; }
 .popup.is-active { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }

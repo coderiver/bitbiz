@@ -881,19 +881,23 @@ body
 	&.is-fixed
 		padding: 113px 0 0 0 
 		.header
-			position: fixed
-			top: 0
-			left: 0
-			right: 0
 			z-index: 999
+	&.is-icons
 		.icons
 			right: 0
 	&.no-scroll
 		.icons
 			right: 0
 
-
-
+.header
+	&.is-fixed
+		position: fixed
+		top: -113px
+		left: 0
+		right: 0
+		+transition(top 0.5s)
+	&.is-active
+		top: 0
 .popup
 	position: fixed
 	top: 0

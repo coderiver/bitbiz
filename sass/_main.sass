@@ -958,10 +958,59 @@ body
 
 
 
-
-
-
-
+.article
+	background: #eff1f4
+	padding: 50px 50px 10px
+	+r(980)
+		padding: 30px 20px 10px 
+	&__inner
+		max-width: 960px
+		margin: 0 auto
+	h1
+		+med
+		font-size: 22px
+		line-height: 24px
+		margin-bottom: 2px
+	h2
+		+semi
+		font-size: 16px
+		line-height: 24px
+		margin-bottom: 16px
+	h3
+		+semi
+		font-size: 16px
+		line-height: 24px
+		color: #699d66
+		margin-bottom: 9px
+	p, ul
+		+light
+		font-size: 16px
+		line-height: 20px
+		span
+			+med
+			color: #699d66
+	li
+		line-height: 30px
+	p
+		span
+			width: 30px
+			display: inline-block
+	&__text
+		padding-bottom: 15px
+		p
+			padding-bottom: 10px 
+	&__list
+		padding: 40px 0 60px 0
+		li
+			padding: 0 0 0 20px
+			position: relative
+			&:before
+				content: "-"
+				position: absolute
+				top: 0
+				left: 8px
+	&__paragraph
+		padding: 0 0 40px 
 
 
 

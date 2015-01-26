@@ -306,3 +306,20 @@ body.no-scroll .icons { right: 0; }
 @media only screen and (max-width: 480px) { .popup__inner { margin: 0; right: 0; left: 0; } }
 .popup__inner .form { margin: 0 auto; display: inline-block; vertical-align: middle; }
 .popup__inner .form:after { content: none; }
+
+.article { background: #eff1f4; padding: 50px 50px 10px; }
+@media only screen and (max-width: 980px) { .article { padding: 30px 20px 10px; } }
+.article__inner { max-width: 960px; margin: 0 auto; }
+.article h1 { font-family: "Exo2 Medium", Arial, sans-serif; font-size: 22px; line-height: 24px; margin-bottom: 2px; }
+.article h2 { font-family: "Exo2 Semibold", Arial, sans-serif; font-size: 16px; line-height: 24px; margin-bottom: 16px; }
+.article h3 { font-family: "Exo2 Semibold", Arial, sans-serif; font-size: 16px; line-height: 24px; color: #699d66; margin-bottom: 9px; }
+.article p, .article ul { font-family: "Exo2 Light", Arial, sans-serif; font-size: 16px; line-height: 20px; }
+.article p span, .article ul span { font-family: "Exo2 Medium", Arial, sans-serif; color: #699d66; }
+.article li { line-height: 30px; }
+.article p span { width: 30px; display: inline-block; }
+.article__text { padding-bottom: 15px; }
+.article__text p { padding-bottom: 10px; }
+.article__list { padding: 40px 0 60px 0; }
+.article__list li { padding: 0 0 0 20px; position: relative; }
+.article__list li:before { content: "-"; position: absolute; top: 0; left: 8px; }
+.article__paragraph { padding: 0 0 40px; }

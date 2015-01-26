@@ -10,10 +10,598 @@
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
-<body>
+<body class="body">
+<div class="popup js-popup">
+	<div class="overlay"></div>
+	<div class="popup__inner">
+		<div class="form">
+			<div class="form__top">
+				<h2>
+					<span>7345.8 UAH</span>
+					<i class="is-arr_down"></i>
+					<span>1 BTC</span>
+					<i class="is-arr_up"></i>
+					<span>6306.3 UAH</span>
+				</h2>
+				<div class="shadow"></div>
+			</div>
+			<div class="form__body">
+				<div class="form__tabs">
+					<a href="#is-in" class="btn is-active js-is-in">Покупка</a>
+					<a href="#is-out" class="btn js-is-out">Вывод</a>							
+				</div>
+				<div class="form__content" id="is-in">
+					<div class="form-1 form__block" id="form1">
+						<div class="form__info">
+							<ul class="form__variant">
+								<li class="is-first"><a href="#"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
+								<li><a href="#"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
+							</ul>										
+						</div>							
+						<div class="form__bottom">
+							<a href="#form1" class="btn btn_dark">назад</a>
+							<a href="#form2" class="btn btn_light js-form2">далее</a>
+						</div>
+					</div>
+					<div class="form-2 form__block is-hidden" id="form2">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="ВВЕДИТЕ КОД С ЧЕКА">
+								</div>
+								<div class="form__img">
+									<img src="img/form__img.png" alt="">
+								</div>	
+							</div>																		
+						</div>
+						<div class="form__bottom">
+							<a href="#form1" class="btn btn_dark js-form1">назад</a>
+							<a href="#form3" class="btn btn_light js-form3">Оплатить</a>
+						</div>							
+					</div>
+					<div class="form-3 form__block is-hidden" id="form3">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+								</div>
+								<div class="form__field form__field_ccv">
+									<div class="form__med">
+										<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+									</div>
+									<div class="form__lil">									
+										<input type="text" class="form__input" placeholder="CCV">
+									</div>
+								</div>
+								<div class="form__field form__field_pay">
+									<div class="form__pay">									
+										<div class="form__50">
+											<div class="form__in_box">
+												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+												<span class="form__mn">UAH</span>											
+											</div>
+										</div>
+										<div class="form__50">	
+											<div class="form__in_box">								
+												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+												<span class="form__mn">BTC</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form__bottom">
+							<a href="#form2" class="btn btn_dark js-form2">назад</a>
+							<a href="#form3" class="btn btn_light">далее</a>
+						</div>
+					</div>
+				</div>
+				<div class="form__content is-hidden" id="is-out">
+					<div class="form-4 form__block" id="form4">
+						<div class="form__info">
+							<ul class="form__variant">
+								<li class="is-first"><a href="#"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+								<li><a href="#" class="is-active"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+							</ul>								
+						</div>
+						<div class="form__bottom">
+							<a href="#form4" class="btn btn_dark js-in">назад</a>
+							<a href="#form5" class="btn btn_light js-form5">далее</a>
+						</div>	
+					</div>
+					<div class="form-5 form__block is-hidden" id="form5">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field form__field_pay">
+									<div class="form__pay">
+										<div class="form__50">
+											<div class="form__in_box">
+												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+												<span class="form__mn">BTC</span>
+											</div>
+										</div>
+										<div class="form__50">	
+											<div class="form__in_box">
+												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+												<span class="form__mn">UAH</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+								</div>
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+								</div>
+							</div>
+						</div>								
+						<div class="form__bottom">
+							<a href="#form4" class="btn btn_dark js-form4">назад</a>
+							<a href="#form6" class="btn btn_light js-form6">далее</a>
+						</div>
+					</div>
+					<div class="form-6 form__block is-hidden" id="form6">
+						<div class="form__info">
+							<div class="form__in">	
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+								</div>						
+								<div class="form__field form__field_pay">
+									<div class="form__pay">									
+										<div class="form__50">
+											<input type="text" class="form__input" placeholder="ГОРОД ДОСТАВКИ">									
+										</div>
+										<div class="form__50">								
+											<input type="text" class="form__input" placeholder="ТЕЛЕФОН">
+										</div>
+									</div>
+								</div>					
+								<div class="form__field form__field_pay">
+									<div class="form__pay">									
+										<div class="form__50">
+											<input type="text" class="form__input" placeholder="СЛОВО-ПАРОЛЬ">									
+										</div>
+										<div class="form__50">								
+											<div class="form__check">
+												<label class="checkbox">
+													<input type="checkbox" name="check" value=" "><span class="checkbox__title"></span>
+												</label>
+												<p>I am agree with <a href="#">Fees</a> and <a href="#">terms</a></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>								
+						<div class="form__bottom">
+							<a href="#form5" class="btn btn_dark js-form5">назад</a>
+							<a href="#form7" class="btn btn_light js-form7">далее</a>
+						</div>
+					</div>
+					<div class="form-7 form__block is-hidden" id="form7">
+						<div class="form__info">								
+							<div class="form__in">	
+								<div class="form__review">
+									<a href="#" class="form__btn_mod">обзор</a>
+									<p>Upload scans or photos of all completed pages of the passport and identification code:</p>
+								</div>
+								<div class="form__upload">
+									<label class="form__upload__box">
+										<input type="file">
+										<span>image_name . jpg</span>
+									</label>
+									<label class="form__upload__box">
+										<input type="file">
+										<span>image_name . jpg</span>
+									</label>
+									<label class="form__upload__box">
+										<input type="file">
+										<span>image_name . jpg</span>
+									</label>
+									<label class="form__upload__box">
+										<input type="file">
+										<span>looooong_image_name . jpg</span>
+									</label>
+								</div>
+							</div>									
+						</div>								
+						<div class="form__bottom">
+							<a href="#form6" class="btn btn_dark js-form6">назад</a>
+							<a href="#form7" class="btn btn_light">далее</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="icons">
+	<a href="#" class="is-pay js-form"></a>
+	<a href="#" class="is-heart"></a>
+</div>
 <!-- BEGIN  out-->
 <div class="out">
-
+	<!-- begin header  -->
+	<header class="header">
+		<div class="header__inner">
+			<ul class="nav is-desk">
+				<li><a href="#"><span>О сервисе</span></a></li>
+				<li><a href="#" class="is-active"><span>Медиа<br> о нас</span></a></li>
+				<li><a href="#"><span>Карта<br> терминалов </span></a></li>
+			</ul>
+			<div class="is-center">
+				<a href="#" class="logo">
+					<img src="img/logo.png" alt="">
+					<span>btcu.biz</span>
+				</a>
+				<a href="#" class="lang">Eng</a>
+			</div>	
+			<ul class="nav is-desk">
+				<li><a href="#"><span>Условия<br> использования</span></a></li>
+				<li><a href="#"><span>F.A.Q.</span></a></li>
+				<li><a href="#"><span>Что такое<br> биткоин?</span></a></li>
+			</ul>
+			<button class="nav-btn"><span></span></button>	
+			<ul class="nav-mob">
+				<li><a href="#">О сервисе</a></li>
+				<li><a href="#" class="is-active">Медиа о нас</a></li>
+				<li><a href="#">Карта терминалов</a></li>
+				<li><a href="#">Условия использования</a></li>
+				<li><a href="#">F.A.Q.</a></li>
+				<li><a href="#">Что такое биткоин?</a></li>
+			</ul>	
+		</div>
+	</header>
+	<!-- end header -->
+	<!-- begin banner  -->
+	<section class="banner">
+		<div class="banner__inner">
+			<div class="banner__left">
+				<h1>Создаём рынок Bitcoin с 2013 года</h1>
+				<p>Предлагаем простые и удобные способы покупки и продажи Bitcoin 24 часа в сутки, 7 дней в неделю</p>
+				<ul class="graph">
+					<li><i class="is-bill"></i></li>
+					<li><i class="is-coin"></i></li>
+					<li class="is-last"><i class="is-card"></i></li>
+				</ul>
+			</div>
+			<div class="banner__right">
+				<div class="form">
+					<div class="form__top">
+						<h2>
+							<span>7345.8 UAH</span>
+							<i class="is-arr_down"></i>
+							<span>1 BTC</span>
+							<i class="is-arr_up"></i>
+							<span>6306.3 UAH</span>
+						</h2>
+						<div class="shadow"></div>
+					</div>
+					<div class="form__body">
+						<div class="form__tabs">
+							<a href="#is-in" class="btn is-active js-is-in">Покупка</a>
+							<a href="#is-out" class="btn js-is-out">Вывод</a>							
+						</div>
+						<div class="form__content" id="is-in">
+							<div class="form-1 form__block" id="form1">
+								<div class="form__info">
+									<ul class="form__variant">
+										<li class="is-first"><a href="#"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
+										<li><a href="#"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
+									</ul>										
+								</div>							
+								<div class="form__bottom">
+									<a href="#form1" class="btn btn_dark">назад</a>
+									<a href="#form2" class="btn btn_light js-form2">далее</a>
+								</div>
+							</div>
+							<div class="form-2 form__block is-hidden" id="form2">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="ВВЕДИТЕ КОД С ЧЕКА">
+										</div>
+										<div class="form__img">
+											<img src="img/form__img.png" alt="">
+										</div>	
+									</div>																		
+								</div>
+								<div class="form__bottom">
+									<a href="#form1" class="btn btn_dark js-form1">назад</a>
+									<a href="#form3" class="btn btn_light js-form3">Оплатить</a>
+								</div>							
+							</div>
+							<div class="form-3 form__block is-hidden" id="form3">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+										</div>
+										<div class="form__field form__field_ccv">
+											<div class="form__med">
+												<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+											</div>
+											<div class="form__lil">									
+												<input type="text" class="form__input" placeholder="CCV">
+											</div>
+										</div>
+										<div class="form__field form__field_pay">
+											<div class="form__pay">									
+												<div class="form__50">
+													<div class="form__in_box">
+														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+														<span class="form__mn">UAH</span>											
+													</div>
+												</div>
+												<div class="form__50">	
+													<div class="form__in_box">								
+														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+														<span class="form__mn">BTC</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form__bottom">
+									<a href="#form2" class="btn btn_dark js-form2">назад</a>
+									<a href="#form3" class="btn btn_light">далее</a>
+								</div>
+							</div>
+						</div>
+						<div class="form__content is-hidden" id="is-out">
+							<div class="form-4 form__block" id="form4">
+								<div class="form__info">
+									<ul class="form__variant">
+										<li class="is-first"><a href="#"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+										<li><a href="#" class="is-active"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+									</ul>								
+								</div>
+								<div class="form__bottom">
+									<a href="#form4" class="btn btn_dark js-in">назад</a>
+									<a href="#form5" class="btn btn_light js-form5">далее</a>
+								</div>	
+							</div>
+							<div class="form-5 form__block is-hidden" id="form5">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field form__field_pay">
+											<div class="form__pay">
+												<div class="form__50">
+													<div class="form__in_box">
+														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+														<span class="form__mn">BTC</span>
+													</div>
+												</div>
+												<div class="form__50">	
+													<div class="form__in_box">
+														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+														<span class="form__mn">UAH</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+										</div>
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+										</div>
+									</div>
+								</div>								
+								<div class="form__bottom">
+									<a href="#form4" class="btn btn_dark js-form4">назад</a>
+									<a href="#form6" class="btn btn_light js-form6">далее</a>
+								</div>
+							</div>
+							<div class="form-6 form__block is-hidden" id="form6">
+								<div class="form__info">
+									<div class="form__in">	
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+										</div>						
+										<div class="form__field form__field_pay">
+											<div class="form__pay">									
+												<div class="form__50">
+													<input type="text" class="form__input" placeholder="ГОРОД ДОСТАВКИ">									
+												</div>
+												<div class="form__50">								
+													<input type="text" class="form__input" placeholder="ТЕЛЕФОН">
+												</div>
+											</div>
+										</div>					
+										<div class="form__field form__field_pay">
+											<div class="form__pay">									
+												<div class="form__50">
+													<input type="text" class="form__input" placeholder="СЛОВО-ПАРОЛЬ">									
+												</div>
+												<div class="form__50">								
+													<div class="form__check">
+														<label class="checkbox">
+															<input type="checkbox" name="check" value=" "><span class="checkbox__title"></span>
+														</label>
+														<p>I am agree with <a href="#">Fees</a> and <a href="#">terms</a></p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>								
+								<div class="form__bottom">
+									<a href="#form5" class="btn btn_dark js-form5">назад</a>
+									<a href="#form7" class="btn btn_light js-form7">далее</a>
+								</div>
+							</div>
+							<div class="form-7 form__block is-hidden" id="form7">
+								<div class="form__info">								
+									<div class="form__in">	
+										<div class="form__review">
+											<a href="#" class="form__btn_mod">обзор</a>
+											<p>Upload scans or photos of all completed pages of the passport and identification code:</p>
+										</div>
+										<div class="form__upload">
+											<label class="form__upload__box">
+												<input type="file">
+												<span>image_name . jpg</span>
+											</label>
+											<label class="form__upload__box">
+												<input type="file">
+												<span>image_name . jpg</span>
+											</label>
+											<label class="form__upload__box">
+												<input type="file">
+												<span>image_name . jpg</span>
+											</label>
+											<label class="form__upload__box">
+												<input type="file">
+												<span>looooong_image_name . jpg</span>
+											</label>
+										</div>
+									</div>									
+								</div>								
+								<div class="form__bottom">
+									<a href="#form6" class="btn btn_dark js-form6">назад</a>
+									<a href="#form7" class="btn btn_light">далее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</section>
+	<!-- end banner -->
+	<!-- begin content  -->
+	<div class="content">
+		<div class="content__inner">
+			<!-- begin item  -->
+			<div class="item item_map">
+				<div class="side">
+					<a href="#"><i class="is-coin"></i></a>
+					<a href="#"><i class="is-cloud"></i></a>
+				</div>
+				<h2>Более <strong>4000</strong> терминалов по все Украине</h2>
+				<div class="item__imgs">
+					<div class="item__term">
+						<img src="img/terminal.png" alt="">						
+					</div>
+					<div class="item__map">
+						<img src="img/map.svg" alt="">
+						<a href="#">
+							<i></i>
+							<span class="is-big">перейти</span>
+							<span class="is-small">к интерактивной карте</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- begin item  -->
+			<div class="item s-right">
+				<div class="item__inner">
+					<div class="item__left">
+						<img src="img/mark.svg" alt="">
+					</div>
+					<div class="item__right">
+						<h2>Преимущества работы с нами:</h2>
+						<ul class="list text_green">
+							<li>Опыт</li>
+							<li>Надёжность</li>
+							<li>Доступность</li>
+							<li>Анонимность</li>
+							<li>Безопасность</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- begin item  -->
+			<div class="item s-left">
+				<div class="item__inner">
+					<div class="item__left">
+						<img src="img/girl.svg" alt="" class="is-girl">
+					</div>
+					<div class="item__right">
+						<h3>Техническая поддержка 24/7</h3>
+						<div class="text text_yellow">
+							<p>На любом этапе работы с btcu.biz вы можете рассчитывать на своевременную и квалифицированную помощь сотрудников.</p>
+						</div>
+						<ul class="contacts">
+							<li><a href="#" class="is-call"></a></li>
+							<li><a href="#" class="is-cloud"></a></li>
+							<li><a href="#" class="is-mail"></a></li>
+							<li><a href="#" class="is-skype"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- begin item  -->
+			<div class="item s-right">
+				<div class="item__inner">
+					<div class="item__left">
+						<img src="img/card.svg" alt="">
+					</div>
+					<div class="item__right">
+						<h2>Банковские карты</h2>
+						<div class="text text_green">
+							<p>С нами Вы можете оплатить покупку ВТС картой любого банка мира, работающих в системах Visa и MasterCard</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end item -->
+			<!-- begin item  -->
+			<div class="item s-left">
+				<div class="item__inner">
+					<div class="item__left">
+						<img src="img/delivery_box.svg" alt="">
+					</div>
+					<div class="item__right">
+						<h2>Вывод денег</h2>
+						<div class="text text_yellow">
+							<p>Вывод UAH (гривны) за свои ВТС </p>
+							<p>на карту БНК (Банк Национальный Кредит) </p>
+							<p>Экспресс выпуск карты с адресной доставкой осуществляется за 4 рабочих дня</p>
+						</div>
+						<div class="item__btn">
+							<a href="#" class="button">Заказать карту</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end item -->
+		</div>
+	</div>
+	<!-- end content -->
+	<!-- begin footer  -->
+	<footer class="footer">
+		<div class="footer__inner">
+			<ul class="footer__list">
+				<li><a href="#">О сервисе</a></li>
+				<li><a href="#">Медиа о нас</a></li>
+				<li><a href="#">Карта терминалов</a></li>
+				<li><a href="#">Условия использования</a></li>
+				<li><a href="#">F.A.Q.</a></li>
+				<li><a href="#">Что такое биткоин?</a></li>
+			</ul>
+			<ul class="footer__contact">
+				<li><a href="#"><i class="is-skype"></i><span>btcu.biz Support</span></a></li>
+				<li><a href="#"><i class="is-mail"></i><span>btcu.info@gmail.com</span></a></li>
+				<li><a href="#"><i class="is-cloud"></i><span>Служба поддержки</span></a></li>
+			</ul>
+			<div class="footer__btns">
+				<a href="#"><i class="is-visa"></i></a>
+				<a href="#"><i class="is-master"></i></a>
+			</div>
+		</div>
+		<div class="footer__bottom">
+			<p>© 2015 btcu.biz</p>
+		</div>
+	</footer>
+	<!-- end footer -->
 </div>
 <!-- END out-->
 <!-- load scripts -->

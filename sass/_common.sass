@@ -53,11 +53,76 @@ body
 	font-size: 12px 
 	line-height: 1.4
 
+// fonts
 
-// common blocks      
++font("Exo2 Light", exo2-light)
++font("Exo2 Medium", exo2-medium)
++font("Exo2 Regular", exo2-regular)
++font("Exo2 Semibold", exo2-semibold)
 
 
+=light
+	font-family: "Exo2 Light", Arial, sans-serif 
+=med
+	font-family: "Exo2 Medium", Arial, sans-serif 
+=reg
+	font-family: "Exo2 Regular", Arial, sans-serif 
+=semi
+	font-family: "Exo2 Semibold", Arial, sans-serif 
 
+
+//reset
+h1, h2, h3, h4, h5, h6, strong, b
+	font-weight: normal
+a
+	text-decoration: none     
+
+
+//checkbox
+.checkbox
+	display: inline-block
+	position: relative
+	cursor: pointer
+	+user-select(none)
+	input
+		+opacity(0)
+		width: 25px
+		height: 25px
+		float: left
+		overflow: hidden
+		z-index: 7
+		cursor: pointer
+		&:checked
+			+ .checkbox__title
+				&:after
+					+opacity(1)
+					visibility: visible
+.checkbox__title
+	display: block
+	overflow: hidden
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 50%
+		margin-top: -13px 
+		width: 24px
+		height: 24px
+		border: 1px solid #F7E877
+		background-color: rgba(0, 0, 0, 0.1)
+		+box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.45))
+	&:after
+		content: ""
+		position: absolute
+		+s(check)
+		top: 50%
+		left: 4px
+		margin-top: -7px
+		z-index: 5
+		visibility: hidden
+		+opacity(0)
+		will-change: opacity
+		+transition(opacity 0.2s linear, top 0.2s linear)
 
 
 

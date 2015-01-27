@@ -50,17 +50,21 @@ head.ready(function() {
 			};
 	});	
 	if ($(document).scrollTop() > 113) {
+		$('.header').addClass('is-fixed');
         $(".body").addClass("is-fixed");	
 	}
 	else {
+		$('.header').addClass('is-fixed');
         $(".body").removeClass("is-fixed");
 	};
 	if ($(document).scrollTop() > $('.content').offset().top) {
         $(".body").addClass("is-fixed");	
+        $(".body").addClass("is-icons");	
 				$('.header').addClass('is-active');
 	}
 	else {
         $(".body").removeClass("is-fixed");
+        $(".body").removeClass("is-icons");
 				$('.header').removeClass('is-active');
 	};
 	//popup
@@ -75,6 +79,12 @@ head.ready(function() {
 			$('.js-popup').addClass('is-active');	
 			$('body').addClass('no-scroll');		
 		};
+		return false;
+	});
+	$('.overlay').on('click', function() {
+		$(this).removeClass('is-active');
+		$('.js-popup').removeClass('is-active');
+		$('body').removeClass('no-scroll');
 		return false;
 	});
 	//tabs

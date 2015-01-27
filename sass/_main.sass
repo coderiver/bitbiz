@@ -916,6 +916,7 @@ body
 		+opacity(1)
 		.popup__inner
 			right: 50%
+			+scale(1)
 			+r(480)
 				right: 0
 .overlay
@@ -941,7 +942,8 @@ body
 	width: 100%
 	text-align: center 
 	max-width: 420px 
-	+transition(right 0.5s)
+	+transition(right 0.5s, transform 0.5s)
+	+scale(0)
 	padding: 10px 
 	+vertical
 	+box

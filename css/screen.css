@@ -296,12 +296,12 @@ body.no-scroll .icons { right: 0; }
 
 .popup { position: fixed; top: 0; right: 0; left: 0; bottom: 0; padding: 10px; z-index: 9997; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; font-size: 0; -moz-transition: opacity 0.5s, visibility 0.5s; -o-transition: opacity 0.5s, visibility 0.5s; -webkit-transition: opacity 0.5s, visibility 0.5s; transition: opacity 0.5s, visibility 0.5s; overflow: auto; }
 .popup.is-active { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
-.popup.is-active .popup__inner { right: 50%; }
+.popup.is-active .popup__inner { right: 50%; -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); }
 @media only screen and (max-width: 480px) { .popup.is-active .popup__inner { right: 0; } }
 
 .overlay { position: absolute; top: 0; bottom: 0; min-height: 600px; right: 0; left: 0; z-index: 9; background: white; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; }
 
-.popup__inner { position: absolute; top: 0; height: 100%; min-height: 600px; right: -420px; margin-right: -210px; z-index: 10; display: inline-block; vertical-align: middle; width: 100%; text-align: center; max-width: 420px; -moz-transition: right 0.5s; -o-transition: right 0.5s; -webkit-transition: right 0.5s; transition: right 0.5s; padding: 10px; text-align: center; font-size: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.popup__inner { position: absolute; top: 0; height: 100%; min-height: 600px; right: -420px; margin-right: -210px; z-index: 10; display: inline-block; vertical-align: middle; width: 100%; text-align: center; max-width: 420px; -moz-transition: right 0.5s, -moz-transform 0.5s; -o-transition: right 0.5s, -o-transform 0.5s; -webkit-transition: right 0.5s, -webkit-transform 0.5s; transition: right 0.5s, transform 0.5s; -ms-transform: scale(0); -webkit-transform: scale(0); transform: scale(0); padding: 10px; text-align: center; font-size: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .popup__inner:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 @media only screen and (max-width: 480px) { .popup__inner { margin: 0; right: 0; left: 0; } }
 .popup__inner .form { margin: 0 auto; display: inline-block; vertical-align: middle; }

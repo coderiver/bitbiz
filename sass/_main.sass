@@ -7,6 +7,7 @@
 	background: #ffffff 
 	&__inner
 		max-width: 1000px
+		width: 100%
 		margin: 0 auto
 		+clr
 		font-size: 0
@@ -139,16 +140,26 @@
 		+r(1024)
 			padding: 0 15px 
 	&__left
-		padding: 40px 0 0
+		// padding: 40px 0 0
+		// padding: 60px 0 0 0 
 		width: 100%
 		max-width: 550px
+		height: 365px
 		+box
 		display: inline-block
 		vertical-align: top 
+		+vertical
+		text-align: left
 		+r(1024)
 			display: block
 			text-align: center
 			margin: 0 auto
+			padding: 30px 0
+			height: auto 
+	&__vert
+		display: inline-block
+		vertical-align: middle
+		width: 100%
 	h1
 		+semi
 		font-size: 30px
@@ -193,7 +204,7 @@
 	+vertical
 	text-align: left
 	padding: 0 5px 
-	margin-bottom: 25px
+	// margin-bottom: 25px
 	+r(1024)
 		text-align: center
 	+r(640)
@@ -290,59 +301,8 @@
 		background: #e6db34 
 	&__info		
 		background: #eddc34
-		min-height: 210px 
+		min-height: 212px 
 		text-align: left
-	&__variant
-		a
-			display: block
-			padding: 32px 65px 32px 25px 
-			+vertical
-			position: relative
-			text-align: left
-			background: #e8dc34 
-			&:after
-				position: absolute
-				top: 50%
-				right: 28px
-				margin-top: -17px
-				+svg(form-arr, 34, 34)
-				content: ""
-			&.is-active
-				background: #f4e926 
-			i, span
-				display: inline-block
-				vertical-align: middle
-			i
-				margin-right: 20px
-				&.is-wallet
-					+svg(is-wallet, 48, 40)
-				&.is-card
-					+svg(is-card, 48, 38)
-				&.is-check
-					+s(is-check)
-				&.is-card-arr
-					+s(is-card-arr)
-			span
-				font-size: 20px
-				line-height: 1
-				color: #9e933c 
-				text-transform: uppercase
-				+light
-				max-width: 220px
-				+r(480)
-					display: block
-					padding: 20px 0 0 0 
-				span
-					font-size: 14px
-		li
-			&.is-first
-				padding-bottom: 1px 
-				background-image: -moz-linear-gradient(left, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
-				background-image: -o-linear-gradient(left, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
-				background-image: -webkit-linear-gradient(left, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
-				background-image: linear-gradient(to right, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
-				+box-shadow(0 1px 0 rgba(255, 255, 255, 0.4))
-				margin-bottom: 1px
 	.btn
 		+semi
 		font-size: 20px
@@ -567,6 +527,61 @@
 				position: relative
 				z-index: 9
 				display: block 
+	&__variant
+		a
+			display: block
+			padding: 32px 65px 32px 25px 
+			+vertical
+			position: relative
+			text-align: left
+			background: #e8dc34 
+			&:after
+				position: absolute
+				top: 50%
+				right: 28px
+				margin-top: -17px
+				+svg(form-arr, 34, 34)
+				content: ""
+			&.is-active
+				background: #f4e926 
+			i, span
+				display: inline-block
+				vertical-align: middle
+			i
+				margin-right: 20px
+				&.is-wallet
+					+svg(is-wallet, 48, 40)
+				&.is-card
+					+svg(is-card, 48, 38)
+				&.is-check
+					+s(is-check)
+				&.is-card-arr
+					+s(is-card-arr)
+			span
+				font-size: 20px
+				line-height: 1
+				color: #9e933c 
+				text-transform: uppercase
+				+light
+				max-width: 220px
+				margin: 0
+				+r(480)
+					display: block
+					padding: 20px 0 0 0 
+				span
+					font-size: 14px
+					+r(480)
+						padding: 0 
+		li
+			display: block
+			&.is-first
+				padding-bottom: 1px 
+				background-image: -moz-linear-gradient(left, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
+				background-image: -o-linear-gradient(left, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
+				background-image: -webkit-linear-gradient(left, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
+				background-image: linear-gradient(to right, #E7D934 0%, #CBBA2C 50%, #EFDA34 100%)
+				+box-shadow(0 1px 0 rgba(255, 255, 255, 0.4))
+				margin-bottom: 1px
 // CONTENT
 .content
 	background: #eff1f4
@@ -629,6 +644,7 @@
 		width: 50%
 		max-width: 500px
 		padding: 30px 0  
+		position: relative
 		+r(640)
 			display: block
 			width: 100%
@@ -654,6 +670,7 @@
 		+box 
 		height: 410px
 		+vertical
+		position: relative
 		+r(640)
 			display: block
 			width: 100%
@@ -787,6 +804,27 @@
 						font-size: 14px
 					+r(480)
 						font-size: 12px
+	&__block
+		display: none
+		&.is-active
+			display: block
+	&_mod
+		overflow: hidden
+		.item__left
+			+r(1024)
+				width: 100%
+				text-align: center
+				margin: 0 auto
+				display: block
+		.item__right
+			+r(1024)
+				width: 100%
+				text-align: center
+				margin: 0 auto
+				display: block
+		.text
+			+r(1024)
+				margin: 0 auto
 .button
 	+reg
 	font-size: 20px
@@ -1051,14 +1089,212 @@ body
 
 
 
+.topper
+	background: url(../img/topper.jpg) center center
+	overflow: hidden
+	padding: 0 10px 
+	&__inner
+		position: relative
+		+clr
+		max-width: 1000px
+		margin: 0 auto
+	&__row
+		margin: 0 -10px
+		+clr 
+		font-size: 0
+		padding: 10px 0 
+	&__box
+		display: inline-block
+		vertical-align: top
+		padding: 3px 10px 4px
+		+box  
+		p
+			+reg
+			color: #5d8857 
+			font-size: 16px
+			line-height: 1.25
+			text-transform: uppercase
+			span
+				+semi
+				color: #000 
+	&__left
+		width: 30%
+		text-align: left
+		+r(1024)
+			width: 100%
+			padding: 3px 55px 4px 10px
+			text-align: left
+	&__right
+		width: 26%
+		text-align: right
+		+r(1024)
+			width: 100%
+			padding: 5px 55px 4px 10px
+			text-align: left
+	&__center
+		width: 35%
+		text-align: center
+		+r(1024)
+			width: 100%
+			padding: 3px 55px 4px 10px
+			text-align: left
+	&__close
+		position: absolute
+		top: 50%
+		right: 17px
+		margin-top: -13px 
+		+s(topper-close)
+		+r(1024)
+			top: 21px
+			margin-top: 0
+			
+$orange: #FF9C00
+$text: #313131
+$violet: #2A2E5B
+$gray-text: #7F7F7F
+$form-gray: #F7F8F8
+$border: #d9d9d9
 
 
+$base-font-size: 10px
+$max-main-dia: 32em
+$min-main-dia: 0
+$main-dia: 32em
+$distance: 1.9em
+$inner-dia: ($main-dia - $distance * 2)
+$outer-dia: ($main-dia + $distance * 2)
+$center-btn-dia: 135px
+$item-dia: 100px
+$item-count: 12
 
+$base-angle: -30deg
+$angle: (-360deg / $item-count)
 
+$transition: all 0.5s ease
+button
+	-webkit-appearance: none
+	border: none
 
+.circles
+	display: inline-block
+	vertical-align: middle
+	position: relative
+	padding: 40px
+	font-size: $base-font-size
+	+transition(all 0.5s ease)
+	+r(480)
+		font-size: 6px
+.circles__inner
+	position: relative
+	box-sizing: border-box
+	width: $main-dia
+	height: $main-dia
+	max-width: $max-main-dia
+	min-width: $min-main-dia
+	margin: auto
+	&:before
+		content: ""
+		display: block
+		width: 100%
+		padding-bottom: 100%
+	&:after
+		content: ""
+		position: absolute
+		width: 160px
+		height: 60px
+		margin: 0 0 0 -80px
+		border-bottom: 5px solid #fff
+		+border-radius(100%)
+		bottom: 15px 
+		z-index: 5
+		+r(480)
+			width: 100px
+			margin: 0 0 0 -50px 
+			bottom: 10px
+			height: 50px 
+.circles__items
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	border-radius: 50%
+	font-size: inherit
+	transition: $transition
+	border: 3px solid #fff
+	z-index: 10
+.circles__item
+	position: absolute
+	z-index: 1
+	top: 0
+	left: 0
+	width: $item-dia
+	height: $item-dia
+	border-radius: 50%
+	margin: (-$item-dia / 2) 0 0 (-$item-dia / 2)
+	text-align: center
+	font-size: inherit
+	transition: $transition
+	-webkit-tap-highlight-color: transparent
+	+opacity(0.5)
+	cursor: pointer
+	+user-select(none)
+	+r(480)
+		width: 60px
+		height: 60px
+		margin: -30px 0 0 -30px  
+	&:before
+		display: inline-block
+		width: 0
+		height: 100%
+		content: "" 
+		vertical-align: middle
+	img
+		max-width: 99%
+		max-height: 100% 
+		display: inline-block
+		vertical-align: middle
+	&.is-active
+		+opacity(1)
+@for $i from 1 through $item-count
+	.circles__item:nth-child(#{$i})
+		$top-pos: (($main-dia / 2) * sin($base-angle) + ($main-dia / 2))
+		$left-pos: (($main-dia / 2) * cos($base-angle) + ($main-dia / 2))
+		$base-angle: ($base-angle + $angle)
 
+		top: $top-pos
+		left: $left-pos
 
-
+  
+.circles__center
+	position: absolute
+	top: 50%
+	left: 50%
+	width: $center-btn-dia
+	height: $center-btn-dia
+	line-height: 100%
+	border-radius: 50%
+	margin: (-$center-btn-dia / 2) 0 0 (-$center-btn-dia / 2)
+	-webkit-tap-highlight-color: transparent
+	+vertical
+	cursor: pointer
+	+user-select(none)
+	z-index: 10 
+	+r(480)
+		width: 80px
+		height: 80px
+		margin: -40px 0 0 -40px    
+.circles__logo
+	display: inline-block
+	vertical-align: middle
+	img
+		margin-bottom: 3px
+	span
+		font-size: 20px
+		line-height: 1
+		color: #000
+		+semi 
+		display: block
 
 
 

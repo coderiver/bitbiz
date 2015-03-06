@@ -124,6 +124,7 @@ head.ready(function() {
 	$('.overlay').on('click', function() {
 		$(this).removeClass('is-active');
 		$('.js-popup').removeClass('is-active');
+		$('.js-form').removeClass('is-active');
 		$('body').removeClass('no-scroll');
 		return false;
 	});

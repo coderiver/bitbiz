@@ -15,6 +15,46 @@ head.ready(function() {
 	//     scrollFixedElements()
 	// });
 
+	//select
+	$(document).ready(function() {
+	    $(document).click(function() {
+	        $(".js-select-list").hide();
+	        $(".js-select").removeClass("is-active");
+	    });
+	    function selectList() {
+	        var select = $(".js-select");
+	        var select_list = $(".js-select-list");
+	        $("body").on("click", ".js-select", function(event){
+	            if ($(this).hasClass("is-active")) {
+	                select.removeClass("is-active");
+	                select_list.hide();
+	            }
+	            else {
+	                select.removeClass("is-active");
+	                select_list.hide();
+	                $(this).find(".js-select-list").show();
+	                $(this).addClass("is-active");
+	            }
+	            event.stopPropagation();
+	        });
+	        $("body").on("click", ".js-select-list li", function(event){
+	            var id = $(this).attr("data-id");
+	            var text = $(this).text();
+	            $(this).parents(".js-select").find(".js-select-text").text(text);
+	            $(this).parents(".js-select").find(".js-select-input").val(id);
+	            $(this).parent().hide();
+	            $(this).parents(".js-select").removeClass("is-active");
+	            event.stopPropagation();
+	        });
+	    }  
+	    
+	    selectList();
+	    $("body").on("click", ".js-select", function(event){
+	        event.stopPropagation();
+	    });
+	    
+	});
+
 	$('.nav-btn').on('click', function() {
 		if ($(this).hasClass('is-active')) {
 			$('.nav-mob').removeClass('is-open');
@@ -111,12 +151,10 @@ head.ready(function() {
 		return false;
 	});
 	//form
-	$('.form__bottom a').click(function(event) {
+	$('.form__choice').click(function(event) {
 		/* Act on the event */
-		$('.form__bottom a').removeClass('is-active');
-		$(this).addClass('is-active');
 		attr = $(this).attr('href');
-		$('#form1,#form2,#form3,#form4,#form5,#form6,#form7').addClass('is-hidden');
+		$('#form1,#form2,#form3,#form4,#form5,#form6,#form7,#form8,#form9,#form__card').addClass('is-hidden');
 		$(' '+attr).removeClass('is-hidden');
 		return false;
 	});
@@ -129,6 +167,22 @@ head.ready(function() {
 		$('.form__block').addClass('is-hidden');
 		$('.form-4').removeClass('is-hidden');
 		return false;		
+	});
+
+
+	$('.js-form-cash-btn').on('click', function() {
+		$(this).parents('.form__block').find('.js-form-cash').removeClass('is-hidden');
+		return false;
+	});
+	$('.js-form-cash-btn1').on('click', function() {
+		$(this).parents('.form__block').find('.js-form-cash1').removeClass('is-hidden');
+		$(this).parents('.form__block').find('.js-form-cash2').addClass('is-hidden');
+		return false;
+	});
+	$('.js-form-cash-btn2').on('click', function() {
+		$(this).parents('.form__block').find('.js-form-cash2').removeClass('is-hidden');
+		$(this).parents('.form__block').find('.js-form-cash1').addClass('is-hidden');
+		return false;
 	});
 	//circle
 	var circles = $('.circles');

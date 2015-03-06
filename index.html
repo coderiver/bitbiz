@@ -14,6 +14,7 @@
 <div class="popup js-popup">
 	<div class="overlay"></div>
 	<div class="popup__inner">
+		<!--form-->
 		<div class="form">
 			<div class="form__top"><ul><li><span class="is-block">7345.8 UAH</span><span class="is-block">239 BTC-E</span></li><li>
 						<i class="is-arr_down"></i>
@@ -27,18 +28,18 @@
 			</div>
 			<div class="form__body">
 				<div class="form__tabs">
-					<a href="#is-in" class="btn is-active js-is-in">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
+					<a href="#is-in" class="btn js-is-in">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
 				</div>
 				<div class="form__content" id="is-in">
 					<div class="form-1 form__block" id="form1">
 						<div class="form__info">
 							<ul class="form__variant">
-								<li class="is-first"><a href="#"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
-								<li><a href="#"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
+								<li class="is-first"><a href="#" class="js-form-cash-btn"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
+								<li><a href="#form__card" class="form__choice"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
 							</ul>										
 						</div>							
-						<div class="form__bottom">
-							<a href="#form1" class="btn btn_dark">назад</a><a href="#form2" class="btn btn_light js-form2">далее</a>
+						<div class="form__bottom is-hidden js-form-cash">
+							<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form2" class="btn btn_right form__choice">далее</a>
 						</div>
 					</div>
 					<div class="form-2 form__block is-hidden" id="form2">
@@ -53,7 +54,7 @@
 							</div>																		
 						</div>
 						<div class="form__bottom">
-							<a href="#form1" class="btn btn_dark js-form1">назад</a><a href="#form3" class="btn btn_light js-form3">Оплатить</a>
+							<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">Оплатить</a>
 						</div>							
 					</div>
 					<div class="form-3 form__block is-hidden" id="form3">
@@ -88,7 +89,42 @@
 							</div>
 						</div>
 						<div class="form__bottom">
-							<a href="#form2" class="btn btn_dark js-form2">назад</a><a href="#form3" class="btn btn_light">далее</a>
+							<a href="#form2" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">далее</a>
+						</div>
+					</div>
+					<div class="form-3 form__block is-hidden" id="form__card">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+								</div>
+								<div class="form__field form__field_ccv">
+									<div class="form__med">
+										<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+									</div>
+									<div class="form__lil">									
+										<input type="text" class="form__input" placeholder="CCV">
+									</div>
+								</div>
+								<div class="form__field form__field_pay">
+									<div class="form__pay">									
+										<div class="form__50">
+											<div class="form__in_box">
+												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+												<span class="form__mn">UAH</span>											
+											</div>
+										</div><div class="form__50">	
+											<div class="form__in_box">								
+												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+												<span class="form__mn">BTC</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form__bottom">
+							<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">далее</a>
 						</div>
 					</div>
 				</div>
@@ -96,44 +132,39 @@
 					<div class="form-4 form__block" id="form4">
 						<div class="form__info">
 							<ul class="form__variant">
-								<li class="is-first"><a href="#"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
-								<li><a href="#" class="is-active"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+								<li class="is-first"><a href="#" class="js-form-cash-btn1"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+								<li><a href="#" class="js-form-cash-btn2"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
 							</ul>								
 						</div>
-						<div class="form__bottom">
-							<a href="#form4" class="btn btn_dark js-in">назад</a><a href="#form5" class="btn btn_light js-form5">далее</a>
+						<div class="form__bottom is-hidden js-form-cash1">
+							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form5" class="btn btn_right form__choice">далее</a>
 						</div>	
-					</div>
+						<div class="form__bottom is-hidden js-form-cash2">
+							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form8" class="btn btn_right form__choice">далее</a>
+						</div>	
+					</div>							
 					<div class="form-5 form__block is-hidden" id="form5">
 						<div class="form__info">
 							<div class="form__in">
-								<div class="form__field form__field_pay">
-									<div class="form__pay">
-										<div class="form__50">
-											<div class="form__in_box">
-												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
-												<span class="form__mn">BTC</span>
-											</div>
-										</div><div class="form__50">	
-											<div class="form__in_box">
-												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
-												<span class="form__mn">UAH</span>
-											</div>
-										</div>
+								<div class="form__field">
+									<div class="select js-select">
+										<span class="select__text js-select-text">Выберите банк</span>
+										<input type="hidden" class="js-select-input" value="0">
+										<ul class="select__list js-select-list">
+											<li data-id="#">Marfin Bank</li>
+											<li data-id="#">OTP Bank</li>
+											<li data-id="#">Platinum Bank</li>
+											<li data-id="#">UniCredit Bank</li>
+											<li data-id="#">Universal Bank</li>
+										</ul>
 									</div>
-								</div>
-								<div class="form__field">
-									<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
-								</div>
-								<div class="form__field">
-									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
 								</div>
 							</div>
 						</div>								
 						<div class="form__bottom">
-							<a href="#form4" class="btn btn_dark js-form4">назад</a><a href="#form6" class="btn btn_light js-form6">далее</a>
+							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form6" class="btn btn_right form__choice">далее</a>
 						</div>
-					</div>
+					</div>			
 					<div class="form-6 form__block is-hidden" id="form6">
 						<div class="form__info">
 							<div class="form__in">	
@@ -166,7 +197,7 @@
 							</div>
 						</div>								
 						<div class="form__bottom">
-							<a href="#form5" class="btn btn_dark js-form5">назад</a><a href="#form7" class="btn btn_light js-form7">далее</a>
+							<a href="#form5" class="btn btn_left form__choice">назад</a><a href="#form7" class="btn btn_right form__choice">далее</a>
 						</div>
 					</div>
 					<div class="form-7 form__block is-hidden" id="form7">
@@ -194,18 +225,70 @@
 							</div>									
 						</div>								
 						<div class="form__bottom">
-							<a href="#form6" class="btn btn_dark js-form6">назад</a><a href="#form7" class="btn btn_light">далее</a>
+							<a href="#form6" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">далее</a>
+						</div>
+					</div>					
+					<div class="form-5 form__block is-hidden" id="form8">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field">
+									<div class="select js-select">
+										<span class="select__text js-select-text">Выберите банк</span>
+										<input type="hidden" class="js-select-input" value="0">
+										<ul class="select__list js-select-list">
+											<li data-id="#">Marfin Bank</li>
+											<li data-id="#">OTP Bank</li>
+											<li data-id="#">Platinum Bank</li>
+											<li data-id="#">UniCredit Bank</li>
+											<li data-id="#">Universal Bank</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>								
+						<div class="form__bottom">
+							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form9" class="btn btn_right form__choice">далее</a>
+						</div>
+					</div>				
+					<div class="form-5 form__block is-hidden" id="form9">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field form__field_pay">
+									<div class="form__pay">
+										<div class="form__50">
+											<div class="form__in_box">
+												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+												<span class="form__mn">BTC</span>
+											</div>
+										</div><div class="form__50">	
+											<div class="form__in_box">
+												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+												<span class="form__mn">UAH</span>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+								</div>
+								<div class="form__field">
+									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+								</div>
+							</div>
+						</div>								
+						<div class="form__bottom">
+							<a href="#form8" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">далее</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>	
+		<!--/form-->
 	</div>
 </div>
 <div class="icons">
 	<a href="#" class="is-pay js-form"></a>
 	<a href="#" class="is-heart"></a>
-	<a href="#" class="is-cancel js-close"></a>
 </div>
 <!-- BEGIN  out-->
 <div class="out">
@@ -269,6 +352,7 @@
 					</div> -->
 				</div>				
 			</div><div class="banner__right">
+				<!--form-->
 				<div class="form">
 					<div class="form__top"><ul><li><span class="is-block">7345.8 UAH</span><span class="is-block">239 BTC-E</span></li><li>
 								<i class="is-arr_down"></i>
@@ -282,18 +366,18 @@
 					</div>
 					<div class="form__body">
 						<div class="form__tabs">
-							<a href="#is-in" class="btn is-active js-is-in">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
+							<a href="#is-in" class="btn js-is-in">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
 						</div>
 						<div class="form__content" id="is-in">
 							<div class="form-1 form__block" id="form1">
 								<div class="form__info">
 									<ul class="form__variant">
-										<li class="is-first"><a href="#"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
-										<li><a href="#"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
+										<li class="is-first"><a href="#" class="js-form-cash-btn"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
+										<li><a href="#form__card" class="form__choice"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
 									</ul>										
 								</div>							
-								<div class="form__bottom">
-									<a href="#form1" class="btn btn_dark">назад</a><a href="#form2" class="btn btn_light js-form2">далее</a>
+								<div class="form__bottom is-hidden js-form-cash">
+									<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form2" class="btn btn_right form__choice">далее</a>
 								</div>
 							</div>
 							<div class="form-2 form__block is-hidden" id="form2">
@@ -308,7 +392,7 @@
 									</div>																		
 								</div>
 								<div class="form__bottom">
-									<a href="#form1" class="btn btn_dark js-form1">назад</a><a href="#form3" class="btn btn_light js-form3">Оплатить</a>
+									<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">Оплатить</a>
 								</div>							
 							</div>
 							<div class="form-3 form__block is-hidden" id="form3">
@@ -343,7 +427,42 @@
 									</div>
 								</div>
 								<div class="form__bottom">
-									<a href="#form2" class="btn btn_dark js-form2">назад</a><a href="#form3" class="btn btn_light">далее</a>
+									<a href="#form2" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">далее</a>
+								</div>
+							</div>
+							<div class="form-3 form__block is-hidden" id="form__card">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+										</div>
+										<div class="form__field form__field_ccv">
+											<div class="form__med">
+												<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+											</div>
+											<div class="form__lil">									
+												<input type="text" class="form__input" placeholder="CCV">
+											</div>
+										</div>
+										<div class="form__field form__field_pay">
+											<div class="form__pay">									
+												<div class="form__50">
+													<div class="form__in_box">
+														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+														<span class="form__mn">UAH</span>											
+													</div>
+												</div><div class="form__50">	
+													<div class="form__in_box">								
+														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+														<span class="form__mn">BTC</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form__bottom">
+									<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">далее</a>
 								</div>
 							</div>
 						</div>
@@ -351,44 +470,39 @@
 							<div class="form-4 form__block" id="form4">
 								<div class="form__info">
 									<ul class="form__variant">
-										<li class="is-first"><a href="#"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
-										<li><a href="#" class="is-active"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+										<li class="is-first"><a href="#" class="js-form-cash-btn1"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+										<li><a href="#" class="js-form-cash-btn2"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
 									</ul>								
 								</div>
-								<div class="form__bottom">
-									<a href="#form4" class="btn btn_dark js-in">назад</a><a href="#form5" class="btn btn_light js-form5">далее</a>
+								<div class="form__bottom is-hidden js-form-cash1">
+									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form5" class="btn btn_right form__choice">далее</a>
 								</div>	
-							</div>
+								<div class="form__bottom is-hidden js-form-cash2">
+									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form8" class="btn btn_right form__choice">далее</a>
+								</div>	
+							</div>							
 							<div class="form-5 form__block is-hidden" id="form5">
 								<div class="form__info">
 									<div class="form__in">
-										<div class="form__field form__field_pay">
-											<div class="form__pay">
-												<div class="form__50">
-													<div class="form__in_box">
-														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
-														<span class="form__mn">BTC</span>
-													</div>
-												</div><div class="form__50">	
-													<div class="form__in_box">
-														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
-														<span class="form__mn">UAH</span>
-													</div>
-												</div>
+										<div class="form__field">
+											<div class="select js-select">
+												<span class="select__text js-select-text">Выберите банк</span>
+												<input type="hidden" class="js-select-input" value="0">
+												<ul class="select__list js-select-list">
+													<li data-id="#">Marfin Bank</li>
+													<li data-id="#">OTP Bank</li>
+													<li data-id="#">Platinum Bank</li>
+													<li data-id="#">UniCredit Bank</li>
+													<li data-id="#">Universal Bank</li>
+												</ul>
 											</div>
-										</div>
-										<div class="form__field">
-											<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
-										</div>
-										<div class="form__field">
-											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
 										</div>
 									</div>
 								</div>								
 								<div class="form__bottom">
-									<a href="#form4" class="btn btn_dark js-form4">назад</a><a href="#form6" class="btn btn_light js-form6">далее</a>
+									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form6" class="btn btn_right form__choice">далее</a>
 								</div>
-							</div>
+							</div>			
 							<div class="form-6 form__block is-hidden" id="form6">
 								<div class="form__info">
 									<div class="form__in">	
@@ -421,7 +535,7 @@
 									</div>
 								</div>								
 								<div class="form__bottom">
-									<a href="#form5" class="btn btn_dark js-form5">назад</a><a href="#form7" class="btn btn_light js-form7">далее</a>
+									<a href="#form5" class="btn btn_left form__choice">назад</a><a href="#form7" class="btn btn_right form__choice">далее</a>
 								</div>
 							</div>
 							<div class="form-7 form__block is-hidden" id="form7">
@@ -449,12 +563,65 @@
 									</div>									
 								</div>								
 								<div class="form__bottom">
-									<a href="#form6" class="btn btn_dark js-form6">назад</a><a href="#form7" class="btn btn_light">далее</a>
+									<a href="#form6" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">далее</a>
+								</div>
+							</div>					
+							<div class="form-5 form__block is-hidden" id="form8">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field">
+											<div class="select js-select">
+												<span class="select__text js-select-text">Выберите банк</span>
+												<input type="hidden" class="js-select-input" value="0">
+												<ul class="select__list js-select-list">
+													<li data-id="#">Marfin Bank</li>
+													<li data-id="#">OTP Bank</li>
+													<li data-id="#">Platinum Bank</li>
+													<li data-id="#">UniCredit Bank</li>
+													<li data-id="#">Universal Bank</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>								
+								<div class="form__bottom">
+									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form9" class="btn btn_right form__choice">далее</a>
+								</div>
+							</div>				
+							<div class="form-5 form__block is-hidden" id="form9">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field form__field_pay">
+											<div class="form__pay">
+												<div class="form__50">
+													<div class="form__in_box">
+														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+														<span class="form__mn">BTC</span>
+													</div>
+												</div><div class="form__50">	
+													<div class="form__in_box">
+														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+														<span class="form__mn">UAH</span>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+										</div>
+										<div class="form__field">
+											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+										</div>
+									</div>
+								</div>								
+								<div class="form__bottom">
+									<a href="#form8" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">далее</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>	
+				<!--/form-->
 			</div>
 		</div>
 	</section>

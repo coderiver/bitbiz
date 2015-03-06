@@ -4,23 +4,56 @@
 	margin: 0 auto
 
 .header
-	background: #ffffff 
+	// background: #ffffff 
+	overflow: hidden
+	+r(1024)
+		overflow: visible
+		background: #fff 
+		position: relative
+		z-index: 300
 	&__inner
 		max-width: 1000px
 		width: 100%
 		margin: 0 auto
-		+clr
 		font-size: 0
 		position: relative
+		display: table
+		border-collapse: collapse
+		+r(1024)
+			display: block
+			height: 113px
+		&:before, &:after
+			content: ""
+			position: absolute
+			top: 0
+			bottom: 0
+			background: #fff
+			width: 2000px
+			+r(1024)
+				display: none
+		&:before
+			left: 100%
+		&:after
+			right: 100%
+	&__in
+		display: table-row
+		+r(1024)
+			display: block
 .nav
 	font-size: 0
-	display: inline-block
 	vertical-align: top
+	display: table-cell
+	+r(1024)
+		display: inline-block
 	&.is-desk
 		+r(1024)
 			display: none
+	ul
+		display: table
+		border-collapse: collapse
+		width: 100%
 	li
-		display: inline-block
+		display: table-cell
 		vertical-align: top
 		position: relative
 		a
@@ -28,6 +61,7 @@
 			height: 113px
 			display: block
 			padding: 0 30px 
+			background: #fff 
 			span
 				display: inline-block
 				vertical-align: middle
@@ -36,7 +70,8 @@
 				line-height: 16px
 				color: #000000 
 			&.is-active
-				background: #89d57f
+				// background: #89d57f
+				background: none
 				border-left: 1px solid #77c777 
 				border-right: 1px solid #77c777 
 				span
@@ -70,6 +105,7 @@
 	overflow: hidden
 	+border-radius(0 0 5px 5px)
 	display: none
+	top: 100%
 	+r(1024)
 		display: block
 		visibility: hidden
@@ -95,11 +131,12 @@
 .is-center
 	width: 154px
 	padding: 18px 0 0 0 
-	display: inline-block
 	vertical-align: top
 	text-align: center
 	position: relative
 	margin-bottom: 10px
+	display: table-cell
+	background: #fff 
 .logo
 	display: inline-block
 	img
@@ -130,6 +167,7 @@
 	background: url(../img/banner.jpg) center center #89d57f
 	font-size: 0
 	border-bottom: 1px solid #6fad67 
+	z-index: 500 
 	&__inner
 		max-width: 1000px
 		padding: 0 20px 0 30px 
@@ -598,7 +636,7 @@
 	overflow: hidden
 	right: -52px
 	+transition(right 0.5s)
-	z-index: 9999 
+	z-index: 400
 	a
 		margin: 4px 0  
 		&.is-pay
@@ -621,6 +659,11 @@ body
 		padding: 113px 0 0 0 
 		.header
 			z-index: 999
+		.nav
+			li
+				a
+					&.is-active
+						background: #89d57f 
 	&.is-icons
 		.icons
 			right: 0
@@ -644,7 +687,7 @@ body
 	left: 0
 	bottom: 0
 	padding: 10px
-	z-index: 9997
+	z-index: 350
 	visibility: hidden
 	+opacity(0)
 	font-size: 0

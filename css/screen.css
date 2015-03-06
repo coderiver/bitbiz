@@ -45,17 +45,26 @@ a { text-decoration: none; }
 
 .out { min-width: 320px; width: 100%; margin: 0 auto; }
 
-.header { background: white; }
-.header__inner { max-width: 1000px; width: 100%; margin: 0 auto; *zoom: 1; font-size: 0; position: relative; }
-.header__inner:after { content: " "; display: table; clear: both; }
+.header { overflow: hidden; }
+@media only screen and (max-width: 1024px) { .header { overflow: visible; background: white; position: relative; z-index: 300; } }
+.header__inner { max-width: 1000px; width: 100%; margin: 0 auto; font-size: 0; position: relative; display: table; border-collapse: collapse; }
+@media only screen and (max-width: 1024px) { .header__inner { display: block; height: 113px; } }
+.header__inner:before, .header__inner:after { content: ""; position: absolute; top: 0; bottom: 0; background: white; width: 2000px; }
+@media only screen and (max-width: 1024px) { .header__inner:before, .header__inner:after { display: none; } }
+.header__inner:before { left: 100%; }
+.header__inner:after { right: 100%; }
+.header__in { display: table-row; }
+@media only screen and (max-width: 1024px) { .header__in { display: block; } }
 
-.nav { font-size: 0; display: inline-block; vertical-align: top; }
+.nav { font-size: 0; vertical-align: top; display: table-cell; }
+@media only screen and (max-width: 1024px) { .nav { display: inline-block; } }
 @media only screen and (max-width: 1024px) { .nav.is-desk { display: none; } }
-.nav li { display: inline-block; vertical-align: top; position: relative; }
-.nav li a { text-align: center; font-size: 0; height: 113px; display: block; padding: 0 30px; }
+.nav ul { display: table; border-collapse: collapse; width: 100%; }
+.nav li { display: table-cell; vertical-align: top; position: relative; }
+.nav li a { text-align: center; font-size: 0; height: 113px; display: block; padding: 0 30px; background: white; }
 .nav li a:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 .nav li a span { display: inline-block; vertical-align: middle; font-family: "Exo2 Light", Arial, sans-serif; font-size: 17px; line-height: 16px; color: black; }
-.nav li a.is-active { background: #89d57f; border-left: 1px solid #77c777; border-right: 1px solid #77c777; }
+.nav li a.is-active { background: none; border-left: 1px solid #77c777; border-right: 1px solid #77c777; }
 .nav li a.is-active span { color: white; }
 
 .nav-btn { border-top: 4px solid black; border-bottom: 4px solid black; width: 30px; padding: 4px 0; background: none; position: absolute; top: 20px; right: 20px; display: none; }
@@ -63,13 +72,13 @@ a { text-decoration: none; }
 .nav-btn.is-active { -ms-transform: scale(1.1); -webkit-transform: scale(1.1); transform: scale(1.1); }
 .nav-btn span { width: 100%; height: 4px; background: black; display: block; }
 
-.nav-mob { position: absolute; right: 0; text-align: right; z-index: 10; overflow: hidden; -moz-border-radius: 0 0 5px 5px; -webkit-border-radius: 0; border-radius: 0 0 5px 5px; display: none; }
+.nav-mob { position: absolute; right: 0; text-align: right; z-index: 10; overflow: hidden; -moz-border-radius: 0 0 5px 5px; -webkit-border-radius: 0; border-radius: 0 0 5px 5px; display: none; top: 100%; }
 @media only screen and (max-width: 1024px) { .nav-mob { display: block; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; -moz-transition: visibility 0.3s, opacity 0.3s; -o-transition: visibility 0.3s, opacity 0.3s; -webkit-transition: visibility 0.3s, opacity 0.3s; transition: visibility 0.3s, opacity 0.3s; } }
 @media only screen and (max-width: 1024px) { .nav-mob.is-open { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; } }
 .nav-mob a { padding: 10px 20px; font-family: "Exo2 Light", Arial, sans-serif; font-size: 17px; line-height: 16px; color: black; display: block; background: white; }
 .nav-mob a.is-active { background: #89d57f; border-top: 1px solid #77c777; border-bottom: 1px solid #77c777; color: white; }
 
-.is-center { width: 154px; padding: 18px 0 0 0; display: inline-block; vertical-align: top; text-align: center; position: relative; margin-bottom: 10px; }
+.is-center { width: 154px; padding: 18px 0 0 0; vertical-align: top; text-align: center; position: relative; margin-bottom: 10px; display: table-cell; background: white; }
 
 .logo { display: inline-block; }
 .logo img { margin-bottom: 3px; }
@@ -77,7 +86,7 @@ a { text-decoration: none; }
 
 .lang { position: absolute; bottom: -2px; right: 0; font-family: "Exo2 Light", Arial, sans-serif; font-size: 13px; line-height: 16px; color: black; background: #f4dd36; padding: 2px 5px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; z-index: 5; }
 
-.banner { background: url(../img/banner.jpg) center center #89d57f; font-size: 0; border-bottom: 1px solid #6fad67; }
+.banner { background: url(../img/banner.jpg) center center #89d57f; font-size: 0; border-bottom: 1px solid #6fad67; z-index: 500; }
 .banner__inner { max-width: 1000px; padding: 0 20px 0 30px; margin: 0 auto; *zoom: 1; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; position: relative; }
 .banner__inner:after { content: " "; display: table; clear: both; }
 @media only screen and (max-width: 1024px) { .banner__inner { padding: 0 15px; } }
@@ -216,7 +225,7 @@ a { text-decoration: none; }
 .footer__bottom { text-align: center; padding: 0 10px 10px; }
 .footer__bottom p { font-family: "Exo2 Medium", Arial, sans-serif; font-size: 16px; line-height: 36px; color: #9e933c; }
 
-.icons { position: fixed; top: 50%; margin-top: -90px; height: 180px; width: 52px; overflow: hidden; right: -52px; -moz-transition: right 0.5s; -o-transition: right 0.5s; -webkit-transition: right 0.5s; transition: right 0.5s; z-index: 9999; }
+.icons { position: fixed; top: 50%; margin-top: -90px; height: 180px; width: 52px; overflow: hidden; right: -52px; -moz-transition: right 0.5s; -o-transition: right 0.5s; -webkit-transition: right 0.5s; transition: right 0.5s; z-index: 400; }
 .icons a { margin: 4px 0; }
 .icons a.is-pay { background: url("../img/svg/pay_form.svg") no-repeat 0 0; -moz-background-size: 71px 51px; -o-background-size: 71px 51px; -webkit-background-size: 71px 51px; background-size: 71px 51px; width: 71px; height: 51px; display: inline-block; }
 .icons a.is-pay:before { content: ""; position: absolute; top: 4px; right: 0; left: 0; background: url("../img/svg/cancel.svg") no-repeat 0 0; -moz-background-size: 71px 51px; -o-background-size: 71px 51px; -webkit-background-size: 71px 51px; background-size: 71px 51px; width: 71px; height: 51px; display: inline-block; display: none; }
@@ -225,13 +234,14 @@ a { text-decoration: none; }
 
 body.is-fixed { padding: 113px 0 0 0; }
 body.is-fixed .header { z-index: 999; }
+body.is-fixed .nav li a.is-active { background: #89d57f; }
 body.is-icons .icons { right: 0; }
 body.no-scroll .icons { right: 0; }
 
 .header.is-fixed { position: fixed; top: -113px; left: 0; right: 0; -moz-transition: top 0.5s; -o-transition: top 0.5s; -webkit-transition: top 0.5s; transition: top 0.5s; }
 .header.is-active { top: 0; }
 
-.popup { position: fixed; top: 0; right: 0; left: 0; bottom: 0; padding: 10px; z-index: 9997; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; font-size: 0; -moz-transition: opacity 0.5s, visibility 0.5s; -o-transition: opacity 0.5s, visibility 0.5s; -webkit-transition: opacity 0.5s, visibility 0.5s; transition: opacity 0.5s, visibility 0.5s; overflow: auto; }
+.popup { position: fixed; top: 0; right: 0; left: 0; bottom: 0; padding: 10px; z-index: 350; visibility: hidden; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; font-size: 0; -moz-transition: opacity 0.5s, visibility 0.5s; -o-transition: opacity 0.5s, visibility 0.5s; -webkit-transition: opacity 0.5s, visibility 0.5s; transition: opacity 0.5s, visibility 0.5s; overflow: auto; }
 .popup.is-active { visibility: visible; filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
 .popup.is-active .popup__inner { right: 50%; -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); }
 @media only screen and (max-width: 480px) { .popup.is-active .popup__inner { right: 0; } }

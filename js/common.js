@@ -184,6 +184,8 @@ head.ready(function() {
 		$(this).parents('.form__block').find('.js-form-cash1').addClass('is-hidden');
 		return false;
 	});
+
+	
 	//circle
 	var circles = $('.circles');
 

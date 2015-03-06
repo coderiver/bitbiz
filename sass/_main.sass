@@ -636,7 +636,7 @@
 	overflow: hidden
 	right: -52px
 	+transition(right 0.5s)
-	z-index: 400
+	z-index: 1001
 	a
 		margin: 4px 0  
 		&.is-pay
@@ -687,7 +687,7 @@ body
 	left: 0
 	bottom: 0
 	padding: 10px
-	z-index: 350
+	z-index: 1000
 	visibility: hidden
 	+opacity(0)
 	font-size: 0
@@ -1159,6 +1159,14 @@ button
 	&__bottom
 		position: relative
 		z-index: 2 
+		&:before
+			position: absolute
+			left: 50%
+			top: 0
+			bottom: 0
+			border-right: 1px solid #e5db34
+			content: "" 
+			z-index: 2 
 		&.is-hidden
 			display: none
 		.btn

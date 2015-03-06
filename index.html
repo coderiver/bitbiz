@@ -28,13 +28,13 @@
 			</div>
 			<div class="form__body">
 				<div class="form__tabs">
-					<a href="#is-in" class="btn js-is-in">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
+					<a href="#is-in" class="btn js-is-in is-active">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
 				</div>
 				<div class="form__content" id="is-in">
 					<div class="form-1 form__block" id="form1">
 						<div class="form__info">
 							<ul class="form__variant">
-								<li class="is-first"><a href="#" class="js-form-cash-btn"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
+								<li class="is-first"><a href="#form2" class="form__choice"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
 								<li><a href="#form__card" class="form__choice"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
 							</ul>										
 						</div>							
@@ -46,7 +46,7 @@
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field">
-									<input type="text" class="form__input" placeholder="ВВЕДИТЕ КОД С ЧЕКА">
+									<input type="text" class="form__input" value="ВВЕДИТЕ КОД С ЧЕКА" onclick="if(this.value=='ВВЕДИТЕ КОД С ЧЕКА'){this.value=''}" onblur="if(this.value==''){this.value='ВВЕДИТЕ КОД С ЧЕКА'}">
 								</div>
 								<div class="form__img">
 									<img src="img/form__img.png" alt="">
@@ -61,26 +61,26 @@
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field">
-									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+									<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
 								</div>
 								<div class="form__field form__field_ccv">
 									<div class="form__med">
-										<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+										<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
 									</div>
 									<div class="form__lil">									
-										<input type="text" class="form__input" placeholder="CCV">
+										<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
 									</div>
 								</div>
 								<div class="form__field form__field_pay">
 									<div class="form__pay">									
 										<div class="form__50">
 											<div class="form__in_box">
-												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+												<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
 												<span class="form__mn">UAH</span>											
 											</div>
 										</div><div class="form__50">	
 											<div class="form__in_box">								
-												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+												<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
 												<span class="form__mn">BTC</span>
 											</div>
 										</div>
@@ -96,26 +96,26 @@
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field">
-									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+									<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
 								</div>
 								<div class="form__field form__field_ccv">
 									<div class="form__med">
-										<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+										<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
 									</div>
 									<div class="form__lil">									
-										<input type="text" class="form__input" placeholder="CCV">
+										<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
 									</div>
 								</div>
 								<div class="form__field form__field_pay">
 									<div class="form__pay">									
 										<div class="form__50">
 											<div class="form__in_box">
-												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+												<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
 												<span class="form__mn">UAH</span>											
 											</div>
 										</div><div class="form__50">	
 											<div class="form__in_box">								
-												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+												<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
 												<span class="form__mn">BTC</span>
 											</div>
 										</div>
@@ -132,8 +132,8 @@
 					<div class="form-4 form__block" id="form4">
 						<div class="form__info">
 							<ul class="form__variant">
-								<li class="is-first"><a href="#" class="js-form-cash-btn1"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
-								<li><a href="#" class="js-form-cash-btn2"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+								<li class="is-first"><a href="#form5" class="form__choice"><i class="is-check"></i><span>На карту банка</span></a></li>
+								<li><a href="#form8" class="form__choice"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
 							</ul>								
 						</div>
 						<div class="form__bottom is-hidden js-form-cash1">
@@ -169,21 +169,21 @@
 						<div class="form__info">
 							<div class="form__in">	
 								<div class="form__field">
-									<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+									<input type="text" class="form__input" value="ФИО ВЛАДЕЛЬЦА КАРТЫ" onclick="if(this.value=='ФИО ВЛАДЕЛЬЦА КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='ФИО ВЛАДЕЛЬЦА КАРТЫ'}">
 								</div>						
 								<div class="form__field form__field_pay">
 									<div class="form__pay">									
 										<div class="form__50">
-											<input type="text" class="form__input" placeholder="ГОРОД ДОСТАВКИ">									
+											<input type="text" class="form__input" value="ГОРОД ДОСТАВКИ" onclick="if(this.value=='ГОРОД ДОСТАВКИ'){this.value=''}" onblur="if(this.value==''){this.value='ГОРОД ДОСТАВКИ'}">									
 										</div><div class="form__50">								
-											<input type="text" class="form__input" placeholder="ТЕЛЕФОН">
+											<input type="text" class="form__input" value="ТЕЛЕФОН" onclick="if(this.value=='ТЕЛЕФОН'){this.value=''}" onblur="if(this.value==''){this.value='ТЕЛЕФОН'}">
 										</div>
 									</div>
 								</div>					
 								<div class="form__field form__field_pay">
 									<div class="form__pay">									
 										<div class="form__50">
-											<input type="text" class="form__input" placeholder="СЛОВО-ПАРОЛЬ">									
+											<input type="text" class="form__input" value="СЛОВО-ПАРОЛЬ" onclick="if(this.value=='СЛОВО-ПАРОЛЬ'){this.value=''}" onblur="if(this.value==''){this.value='СЛОВО-ПАРОЛЬ'}">									
 										</div><div class="form__50">								
 											<div class="form__check">
 												<label class="checkbox">
@@ -257,22 +257,22 @@
 									<div class="form__pay">
 										<div class="form__50">
 											<div class="form__in_box">
-												<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+												<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
 												<span class="form__mn">BTC</span>
 											</div>
 										</div><div class="form__50">	
 											<div class="form__in_box">
-												<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+												<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
 												<span class="form__mn">UAH</span>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="form__field">
-									<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+									<input type="text" class="form__input" value="ФИО ВЛАДЕЛЬЦА КАРТЫ" onclick="if(this.value=='ФИО ВЛАДЕЛЬЦА КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='ФИО ВЛАДЕЛЬЦА КАРТЫ'}">
 								</div>
 								<div class="form__field">
-									<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+									<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
 								</div>
 							</div>
 						</div>								
@@ -391,7 +391,7 @@
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field">
-											<input type="text" class="form__input" placeholder="ВВЕДИТЕ КОД С ЧЕКА">
+											<input type="text" class="form__input" value="ВВЕДИТЕ КОД С ЧЕКА" onclick="if(this.value=='ВВЕДИТЕ КОД С ЧЕКА'){this.value=''}" onblur="if(this.value==''){this.value='ВВЕДИТЕ КОД С ЧЕКА'}">
 										</div>
 										<div class="form__img">
 											<img src="img/form__img.png" alt="">
@@ -406,26 +406,26 @@
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field">
-											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+											<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
 										</div>
 										<div class="form__field form__field_ccv">
 											<div class="form__med">
-												<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+												<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
 											</div>
 											<div class="form__lil">									
-												<input type="text" class="form__input" placeholder="CCV">
+												<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
 											</div>
 										</div>
 										<div class="form__field form__field_pay">
 											<div class="form__pay">									
 												<div class="form__50">
 													<div class="form__in_box">
-														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+														<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
 														<span class="form__mn">UAH</span>											
 													</div>
 												</div><div class="form__50">	
 													<div class="form__in_box">								
-														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+														<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
 														<span class="form__mn">BTC</span>
 													</div>
 												</div>
@@ -441,26 +441,26 @@
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field">
-											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+											<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
 										</div>
 										<div class="form__field form__field_ccv">
 											<div class="form__med">
-												<input type="text" class="form__input" placeholder="СРОК ДЕЙСТВИЯ">
+												<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
 											</div>
 											<div class="form__lil">									
-												<input type="text" class="form__input" placeholder="CCV">
+												<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
 											</div>
 										</div>
 										<div class="form__field form__field_pay">
 											<div class="form__pay">									
 												<div class="form__50">
 													<div class="form__in_box">
-														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+														<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
 														<span class="form__mn">UAH</span>											
 													</div>
 												</div><div class="form__50">	
 													<div class="form__in_box">								
-														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+														<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
 														<span class="form__mn">BTC</span>
 													</div>
 												</div>
@@ -477,7 +477,7 @@
 							<div class="form-4 form__block" id="form4">
 								<div class="form__info">
 									<ul class="form__variant">
-										<li class="is-first"><a href="#form5" class="form__choice"><i class="is-check"></i><span>На карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+										<li class="is-first"><a href="#form5" class="form__choice"><i class="is-check"></i><span>На карту банка</span></a></li>
 										<li><a href="#form8" class="form__choice"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
 									</ul>								
 								</div>
@@ -514,21 +514,21 @@
 								<div class="form__info">
 									<div class="form__in">	
 										<div class="form__field">
-											<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+											<input type="text" class="form__input" value="ФИО ВЛАДЕЛЬЦА КАРТЫ" onclick="if(this.value=='ФИО ВЛАДЕЛЬЦА КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='ФИО ВЛАДЕЛЬЦА КАРТЫ'}">
 										</div>						
 										<div class="form__field form__field_pay">
 											<div class="form__pay">									
 												<div class="form__50">
-													<input type="text" class="form__input" placeholder="ГОРОД ДОСТАВКИ">									
+													<input type="text" class="form__input" value="ГОРОД ДОСТАВКИ" onclick="if(this.value=='ГОРОД ДОСТАВКИ'){this.value=''}" onblur="if(this.value==''){this.value='ГОРОД ДОСТАВКИ'}">									
 												</div><div class="form__50">								
-													<input type="text" class="form__input" placeholder="ТЕЛЕФОН">
+													<input type="text" class="form__input" value="ТЕЛЕФОН" onclick="if(this.value=='ТЕЛЕФОН'){this.value=''}" onblur="if(this.value==''){this.value='ТЕЛЕФОН'}">
 												</div>
 											</div>
 										</div>					
 										<div class="form__field form__field_pay">
 											<div class="form__pay">									
 												<div class="form__50">
-													<input type="text" class="form__input" placeholder="СЛОВО-ПАРОЛЬ">									
+													<input type="text" class="form__input" value="СЛОВО-ПАРОЛЬ" onclick="if(this.value=='СЛОВО-ПАРОЛЬ'){this.value=''}" onblur="if(this.value==''){this.value='СЛОВО-ПАРОЛЬ'}">									
 												</div><div class="form__50">								
 													<div class="form__check">
 														<label class="checkbox">
@@ -602,22 +602,22 @@
 											<div class="form__pay">
 												<div class="form__50">
 													<div class="form__in_box">
-														<input type="text" class="form__input" placeholder="ПЛАТИТЕ">
+														<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
 														<span class="form__mn">BTC</span>
 													</div>
 												</div><div class="form__50">	
 													<div class="form__in_box">
-														<input type="text" class="form__input" placeholder="ПОЛУЧАЕТЕ">
+														<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
 														<span class="form__mn">UAH</span>
 													</div>
 												</div>
 											</div>
 										</div>
 										<div class="form__field">
-											<input type="text" class="form__input" placeholder="ФИО ВЛАДЕЛЬЦА КАРТЫ">
+											<input type="text" class="form__input" value="ФИО ВЛАДЕЛЬЦА КАРТЫ" onclick="if(this.value=='ФИО ВЛАДЕЛЬЦА КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='ФИО ВЛАДЕЛЬЦА КАРТЫ'}">
 										</div>
 										<div class="form__field">
-											<input type="text" class="form__input" placeholder="НОМЕР КАРТЫ">
+											<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
 										</div>
 									</div>
 								</div>								

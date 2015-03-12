@@ -1256,19 +1256,31 @@ button
 	&__review
 		padding-bottom: 15px
 		+clr
-		a
-			display: block
+		label
+			position: relative
+			cursor: pointer
 			float: left
+			overflow: hidden
+			+box-shadow(0 0 3px rgba(0, 0, 0, 0.3))
+			margin: 2px 15px 0 0 
+			input
+				visibility: hidden
+				+opacity(0)
+				position: absolute
+				top: 0
+				bottom: 0
+				right: 0
+				left: 0
+		span
+			display: block
 			+semi
 			font-size: 16px
 			line-height: 20px
 			color: #fffc9c
 			text-transform: uppercase
-			+box-shadow(0 0 3px rgba(0, 0, 0, 0.3))
 			background-color: rgba(0, 0, 0, 0.1)
 			border: 1px solid #F7E877 
 			padding: 9px 12px 8px
-			margin: 2px 15px 0 0 
 		p
 			overflow: hidden
 			+semi
@@ -1288,15 +1300,7 @@ button
 			position: relative
 			margin: 4px 
 			cursor: pointer
-			input
-				float: left
-				position: absolute
-				top: 0
-				bottom: 0
-				left: 0
-				right: 0
-				+opacity(0)
-			span
+			a
 				+semi
 				font-size: 13px
 				line-height: 15px

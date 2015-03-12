@@ -134,58 +134,6 @@ head.ready(function() {
 	// 	$('body').removeClass('no-scroll');
 	// 	return false;
 	// });
-	//tabs
-	$('.form__tabs a').click(function(event) {
-		/* Act on the event */
-		if ($(this).hasClass('js-is-in')) {
-			$('.js-is-out').removeClass('is-active');
-			$('.js-is-in').addClass('is-active');
-		}
-		else {
-
-			$('.js-is-out').addClass('is-active');
-			$('.js-is-in').removeClass('is-active');
-		};		
-		attr = $(this).attr('href');
-		$('#is-in,#is-out').addClass('is-hidden');
-		$(' '+attr).removeClass('is-hidden');
-		return false;
-	});
-	//form
-	$('.form__choice').click(function(event) {
-		/* Act on the event */
-		attr = $(this).attr('href');
-		$('#form1,#form2,#form3,#form4,#form5,#form6,#form7,#form8,#form9,#form__card').addClass('is-hidden');
-		$(' '+attr).removeClass('is-hidden');
-		return false;
-	});
-	$('.js-is-in').on('click', function() {
-		$('.form__block').addClass('is-hidden');
-		$('.form-1').removeClass('is-hidden');
-		return false;		
-	});
-	$('.js-is-out').on('click', function() {
-		$('.form__block').addClass('is-hidden');
-		$('.form-4').removeClass('is-hidden');
-		return false;		
-	});
-
-
-	$('.js-form-cash-btn').on('click', function() {
-		$(this).parents('.form__block').find('.js-form-cash').removeClass('is-hidden');
-		return false;
-	});
-	$('.js-form-cash-btn1').on('click', function() {
-		$(this).parents('.form__block').find('.js-form-cash1').removeClass('is-hidden');
-		$(this).parents('.form__block').find('.js-form-cash2').addClass('is-hidden');
-		return false;
-	});
-	$('.js-form-cash-btn2').on('click', function() {
-		$(this).parents('.form__block').find('.js-form-cash2').removeClass('is-hidden');
-		$(this).parents('.form__block').find('.js-form-cash1').addClass('is-hidden');
-		return false;
-	});
-
 	
 	//circle
 	var circles = $('.circles');
@@ -300,4 +248,58 @@ head.ready(function() {
 
 	};
 	tabsFunc();
+	//form
+
+	//tabs
+	$('.form__tabs a').click(function(event) {
+		/* Act on the event */
+		if ($(this).hasClass('js-is-in')) {
+			$('.js-is-out').removeClass('is-active');
+			$('.js-is-in').addClass('is-active');
+		}
+		else {
+
+			$('.js-is-out').addClass('is-active');
+			$('.js-is-in').removeClass('is-active');
+		};		
+		attr = $(this).attr('href');
+		$('#is-in,#is-out').addClass('is-hidden');
+		$(' '+attr).removeClass('is-hidden');
+		return false;
+	});
+
+	var mytime;
+
+	function Time() {
+	    mytime = setTimeout(function(){ 
+			$('.js-finish').addClass('is-hidden');
+			$('.js-finish-next').removeClass('is-hidden');
+	    },7000);
+	};
+	$('.js-finish-btn').on('click', function() {
+		Time();
+	});
+	function TimeStop() {
+	    clearTimeout(mytime);
+	};
+	$('.form__tabs a').on('click', function() {
+		TimeStop();
+	});
+	$('.to-site').on('click', function() {
+		TimeStop();
+	});
+
+	$(".js-step").click(function () {
+	// This will have the category
+		var id = $(this).data("btn"),
+		// All items
+			$item = $('.js-block');
+
+	// Current item is should be active
+		var $currItem = $('.js-block[data-block=' + id + ']');
+		$('.js-block[data-block=' + id + ']').removeClass('is-hidden');
+	// Remove the active class for other items
+		$item.not($currItem).addClass('is-hidden');
+		return false;
+	});
 });

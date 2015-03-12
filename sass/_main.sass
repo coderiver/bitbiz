@@ -198,21 +198,21 @@
 		display: inline-block
 		vertical-align: middle
 		width: 100%
+		p
+			+light
+			font-size: 20px
+			line-height: 1.5
+			color: #5d8857 
+			max-width: 475px
+			margin-bottom: 30px
+			+r(1024)
+				margin: 0 auto 30px 
 	h1
 		+semi
 		font-size: 30px
 		line-height: 1
 		color: #f7eb96
 		margin-bottom: 17px
-	p
-		+light
-		font-size: 20px
-		line-height: 1.5
-		color: #5d8857 
-		max-width: 475px
-		margin-bottom: 30px
-		+r(1024)
-			margin: 0 auto 30px 
 	&__right
 		max-width: 400px
 		padding: 19px 0 0 0
@@ -1035,6 +1035,8 @@ button
 		-webkit-transform: skew(178deg, 0deg)
 		-o-transform: skew(178deg, 0deg)
 		transform: skew(178deg, 0deg)
+		+r(1024)
+			display: none
 	&:before
 		content: "" 
 		position: absolute
@@ -1293,6 +1295,7 @@ button
 				bottom: 0
 				left: 0
 				right: 0
+				+opacity(0)
 			span
 				+semi
 				font-size: 13px
@@ -1346,6 +1349,7 @@ button
 					padding: 20px 0 0 0 
 				span
 					font-size: 14px
+					display: block
 					+r(480)
 						padding: 0 
 		li
@@ -1442,13 +1446,64 @@ button
 			text-transform: uppercase
 			&:hover
 				background: #eddc34 
-
-
-
-
-
-
-
+	&__finish
+		.form__in
+			text-align: center
+		h2
+			color: #9e933c 
+			+semi
+			font-size: 27px
+			line-height: 1
+			text-transform: uppercase
+			margin-bottom: 28px
+		p
+			font-size: 16px
+			line-height: 1
+			color: #9e933c
+			+semi
+			text-transform: uppercase
+			margin-bottom: 0
+	&__price
+		color: #9e933c
+		font-size: 50px
+		line-height: 1
+		+semi
+		text-transform: uppercase
+		margin-bottom: 10px
+		display: block
+	&__price-list
+		font-size: 0 
+		li
+			+semi
+			font-size: 20px
+			line-height: 1.25
+			color: #9e933c
+			display: inline-block
+			vertical-align: top
+			text-transform: uppercase
+			&:before
+				content: "/"
+				display: inline-block
+				vertical-align: top
+				margin: 0 5px
+				width: auto
+			&:first-child
+				&:before
+					display: none
+	&__bottom_finish
+		height: 66px
+		text-align: center
+		+box
+		padding: 6px 10px 
+		background: url(../img/form-bottom.png) no-repeat
+		+cover
+		background-position: bottom center 
+		&:before
+			display: none
+	.to-site
+		display: inline-block
+		+svg(form-arr, 34, 34)
+		vertical-align: middle
 
 
 

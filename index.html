@@ -28,21 +28,18 @@
 			</div>
 			<div class="form__body">
 				<div class="form__tabs">
-					<a href="#is-in" class="btn js-is-in is-active">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
+					<a href="#is-in" class="btn js-is-in is-active js-step" data-btn="form1">Покупка</a><a href="#is-out" class="btn js-is-out js-step" data-btn="form4">Вывод</a>							
 				</div>
 				<div class="form__content" id="is-in">
-					<div class="form-1 form__block" id="form1">
+					<div class="form-1 form__block js-block" data-block="form1">
 						<div class="form__info">
 							<ul class="form__variant">
-								<li class="is-first"><a href="#form2" class="form__choice"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
-								<li><a href="#form__card" class="form__choice"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
+								<li class="is-first"><a href="#" class="form__choice js-step" data-btn="form-cash"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
+								<li><a href="#" class="form__choice js-step" data-btn="form-card"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
 							</ul>										
-						</div>							
-						<div class="form__bottom is-hidden js-form-cash">
-							<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form2" class="btn btn_right form__choice">далее</a>
 						</div>
 					</div>
-					<div class="form-2 form__block is-hidden" id="form2">
+					<div class="js-block form__block is-hidden" data-block="form-cash">
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field">
@@ -54,57 +51,62 @@
 							</div>																		
 						</div>
 						<div class="form__bottom">
-							<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">далее</a>
+							<a href="#" class="btn btn_left js-step" data-btn="form1">назад</a><a href="#" class="btn btn_right js-step js-finish-btn" data-btn="form3">оплатить</a>
 						</div>							
 					</div>
-					<div class="form-3 form__block is-hidden" id="form3">
-						<div class="form__info">
+					<div class="form__block is-hidden js-finish js-block" data-block="form3">
+						<div class="form__info form__finish">
 							<div class="form__in">
-								<div class="form__field">
-									<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
-								</div>
-								<div class="form__field form__field_ccv">
-									<div class="form__med">
-										<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
-									</div>
-									<div class="form__lil">									
-										<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
-									</div>
-								</div>
-								<div class="form__field form__field_pay">
-									<div class="form__pay">									
-										<div class="form__50">
-											<div class="form__in_box">
-												<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
-												<span class="form__mn">UAH</span>											
-											</div>
-										</div><div class="form__50">	
-											<div class="form__in_box">								
-												<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
-												<span class="form__mn">BTC</span>
-											</div>
-										</div>
-									</div>
-								</div>
+								<h2>Код принят!</h2>
+								<p>ваш счет пополнен на</p>
+								<span class="form__price">6 984 грн</span>
+								<ul class="form__price-list">
+									<li>1.345 btc</li>
+									<li>1.345 btc-e</li>
+								</ul>
 							</div>
 						</div>
-						<div class="form__bottom">
-							<a href="#form2" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">Оплатить</a>
+						<div class="form__bottom form__bottom_finish">
+							<a href="#" class="to-site js-step" data-btn="form-choice2"></a>
 						</div>
 					</div>
-					<div class="form-3 form__block is-hidden" id="form__card">
+					<div class="form__block js-block js-finish-next is-hidden" data-block="form-choice2">
+						<div class="form__info">
+							<ul class="form__variant">
+								<li class="is-first"><a href="#" class="js-step" data-btn="form-add"><span>Пополнить<span>BTC-кошелек</span></span></a></li>
+								<li><a href="#" class="js-step" data-btn="form-take"><span>Получить<span>BTC-E  код</span></span></a></li>
+							</ul>										
+						</div>
+					</div>
+					<div class="js-block form__block is-hidden" data-block="form-add">
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field">
-									<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
+									<input type="text" class="form__input" value="BITCOIN-АДРЕС" onclick="if(this.value=='BITCOIN-АДРЕС'){this.value=''}" onblur="if(this.value==''){this.value='BITCOIN-АДРЕС'}">
 								</div>
-								<div class="form__field form__field_ccv">
-									<div class="form__med">
-										<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
-									</div>
-									<div class="form__lil">									
-										<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
-									</div>
+							</div>																		
+						</div>
+						<div class="form__bottom">
+							<a href="#" class="btn btn_left js-step" data-btn="form-choice2">назад</a><a href="#" class="btn btn_right">оплатить</a>
+						</div>							
+					</div>
+					<div class="js-block form__block is-hidden" data-block="form-take">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field">
+									<input type="text" class="form__input" value="ВАШ E-MAIL" onclick="if(this.value=='ВАШ E-MAIL'){this.value=''}" onblur="if(this.value==''){this.value='ВАШ E-MAIL'}">
+								</div>
+							</div>																		
+						</div>
+						<div class="form__bottom">
+							<a href="#" class="btn btn_left js-step" data-btn="form-choice2">назад</a><a href="#" class="btn btn_right">оплатить</a>
+						</div>							
+					</div>
+					<div class="js-block form__block is-hidden" data-block="form-card">
+						<div class="form__info">
+							<div class="form__in">
+								<div class="form__field">
+									<input type="text" class="form__input" value="BITCOIN-АДРЕС" onclick="if(this.value=='BITCOIN-АДРЕС'){this.value=''}" onblur="if(this.value==''){this.value='BITCOIN-АДРЕС'}">
 								</div>
 								<div class="form__field form__field_pay">
 									<div class="form__pay">									
@@ -124,26 +126,20 @@
 							</div>
 						</div>
 						<div class="form__bottom">
-							<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">Оплатить</a>
+							<a href="#" class="btn btn_left js-step" data-btn="form1">назад</a><a href="#" class="btn btn_right">Оплатить</a>
 						</div>
 					</div>
 				</div>
 				<div class="form__content is-hidden" id="is-out">
-					<div class="form-4 form__block" id="form4">
+					<div class="form-4 form__block js-block" data-block="form4">
 						<div class="form__info">
 							<ul class="form__variant">
-								<li class="is-first"><a href="#form5" class="form__choice"><i class="is-check"></i><span>На карту банка</span></a></li>
-								<li><a href="#form8" class="form__choice"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+								<li class="is-first"><a href="#" class="js-step" data-btn="form5"><i class="is-check"></i><span>На карту банка</span></a></li>
+								<li><a href="#" class="js-step" data-btn="form6"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
 							</ul>								
 						</div>
-						<div class="form__bottom is-hidden js-form-cash1">
-							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form5" class="btn btn_right form__choice">далее</a>
-						</div>	
-						<div class="form__bottom is-hidden js-form-cash2">
-							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form8" class="btn btn_right form__choice">далее</a>
-						</div>	
 					</div>							
-					<div class="form-5 form__block is-hidden" id="form5">
+					<div class="js-block form__block is-hidden" data-block="form5">
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field">
@@ -151,47 +147,46 @@
 										<span class="select__text js-select-text">Выберите банк</span>
 										<input type="hidden" class="js-select-input" value="0">
 										<ul class="select__list js-select-list">
-											<li data-id="#">Marfin Bank</li>
-											<li data-id="#">OTP Bank</li>
-											<li data-id="#">Platinum Bank</li>
-											<li data-id="#">UniCredit Bank</li>
-											<li data-id="#">Universal Bank</li>
-											<li data-id="#">Marfin Bank</li>
-											<li data-id="#">OTP Bank</li>
-											<li data-id="#">Platinum Bank</li>
-											<li data-id="#">UniCredit Bank</li>
-											<li data-id="#">Universal Bank</li>
-											<li data-id="#">А-Банк</li>
-											<li data-id="#">Альфа-Банк</li>
-											<li data-id="#">Банк Восток</li>
-											<li data-id="#">Банк Михайловский</li>
-											<li data-id="#">ВТБ Банк</li>
-											<li data-id="#">Идея Банк</li>
-											<li data-id="#">Киевская Русь</li>
-											<li data-id="#">Кредобанк</li>
-											<li data-id="#">Надра</li>
-											<li data-id="#">Ощадбанк</li>
-											<li data-id="#">Пивденный</li>
-											<li data-id="#">Пиреус Банк</li>
-											<li data-id="#">Правэкс-Банк</li>
-											<li data-id="#">ПриватБанк</li>
-											<li data-id="#">ПроКредит Банк</li>
-											<li data-id="#">Проминвестбанк</li>
-											<li data-id="#">ПУМБ</li>
-											<li data-id="#">Райффайзен Банк Аваль</li>
-											<li data-id="#">Сбербанк России</li>
-											<li data-id="#">Укринбанк</li>
-											<li data-id="#"></li>
+											<li data-id="Marfin Bank">Marfin Bank</li>
+											<li data-id="OTP Bank">OTP Bank</li>
+											<li data-id="Platinum Bank">Platinum Bank</li>
+											<li data-id="UniCredit Bank">UniCredit Bank</li>
+											<li data-id="Universal Bank">Universal Bank</li>
+											<li data-id="Marfin Bank">Marfin Bank</li>
+											<li data-id="OTP Bank">OTP Bank</li>
+											<li data-id="Platinum Bank">Platinum Bank</li>
+											<li data-id="UniCredit Bank">UniCredit Bank</li>
+											<li data-id="Universal Bank">Universal Bank</li>
+											<li data-id="А-Банк">А-Банк</li>
+											<li data-id="Альфа-Банк">Альфа-Банк</li>
+											<li data-id="Банк Восток">Банк Восток</li>
+											<li data-id="Банк Михайловский">Банк Михайловский</li>
+											<li data-id="ВТБ Банк">ВТБ Банк</li>
+											<li data-id="Идея Банк">Идея Банк</li>
+											<li data-id="Киевская Русь">Киевская Русь</li>
+											<li data-id="Кредобанк">Кредобанк</li>
+											<li data-id="Надра">Надра</li>
+											<li data-id="Ощадбанк">Ощадбанк</li>
+											<li data-id="Пивденный">Пивденный</li>
+											<li data-id="Пиреус Банк">Пиреус Банк</li>
+											<li data-id="Правэкс-Банк">Правэкс-Банк</li>
+											<li data-id="ПриватБанк">ПриватБанк</li>
+											<li data-id="ПроКредит Банк">ПроКредит Банк</li>
+											<li data-id="Проминвестбанк">Проминвестбанк</li>
+											<li data-id="ПУМБ">ПУМБ</li>
+											<li data-id="Райффайзен Банк Аваль">Райффайзен Банк Аваль</li>
+											<li data-id="Сбербанк России">Сбербанк России</li>
+											<li data-id="Укринбанк">Укринбанк</li>
 										</ul>
 									</div>
 								</div>
 							</div>
 						</div>								
 						<div class="form__bottom">
-							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form6" class="btn btn_right form__choice">далее</a>
+							<a href="#" class="btn btn_left js-step" data-btn="form4">назад</a><a href="#" class="btn btn_right js-step" data-btn="form9">далее</a>
 						</div>
 					</div>			
-					<div class="form-6 form__block is-hidden" id="form6">
+					<div class="js-block form__block is-hidden" data-block="form6">
 						<div class="form__info">
 							<div class="form__in">	
 								<div class="form__field">
@@ -223,10 +218,10 @@
 							</div>
 						</div>								
 						<div class="form__bottom">
-							<a href="#form5" class="btn btn_left form__choice">назад</a><a href="#form7" class="btn btn_right form__choice">далее</a>
+							<a href="#" class="btn btn_left js-step" data-btn="form4">назад</a><a href="#" class="btn btn_right js-step" data-btn="form7">далее</a>
 						</div>
 					</div>
-					<div class="form-7 form__block is-hidden" id="form7">
+					<div class="js-block form__block is-hidden" data-block="form7">
 						<div class="form__info">								
 							<div class="form__in">	
 								<div class="form__review">
@@ -251,10 +246,10 @@
 							</div>									
 						</div>								
 						<div class="form__bottom">
-							<a href="#form6" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">Отправить</a>
+							<a href="#" class="btn btn_left js-step" data-btn="form6">назад</a><a href="#" class="btn btn_right">Отправить</a>
 						</div>
 					</div>					
-					<div class="form-5 form__block is-hidden" id="form8">
+					<!-- <div class="form-5 form__block is-hidden" id="form8">
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field">
@@ -262,37 +257,36 @@
 										<span class="select__text js-select-text">Выберите банк</span>
 										<input type="hidden" class="js-select-input" value="0">
 										<ul class="select__list js-select-list">
-											<li data-id="#">Marfin Bank</li>
-											<li data-id="#">OTP Bank</li>
-											<li data-id="#">Platinum Bank</li>
-											<li data-id="#">UniCredit Bank</li>
-											<li data-id="#">Universal Bank</li>
-											<li data-id="#">Marfin Bank</li>
-											<li data-id="#">OTP Bank</li>
-											<li data-id="#">Platinum Bank</li>
-											<li data-id="#">UniCredit Bank</li>
-											<li data-id="#">Universal Bank</li>
-											<li data-id="#">А-Банк</li>
-											<li data-id="#">Альфа-Банк</li>
-											<li data-id="#">Банк Восток</li>
-											<li data-id="#">Банк Михайловский</li>
-											<li data-id="#">ВТБ Банк</li>
-											<li data-id="#">Идея Банк</li>
-											<li data-id="#">Киевская Русь</li>
-											<li data-id="#">Кредобанк</li>
-											<li data-id="#">Надра</li>
-											<li data-id="#">Ощадбанк</li>
-											<li data-id="#">Пивденный</li>
-											<li data-id="#">Пиреус Банк</li>
-											<li data-id="#">Правэкс-Банк</li>
-											<li data-id="#">ПриватБанк</li>
-											<li data-id="#">ПроКредит Банк</li>
-											<li data-id="#">Проминвестбанк</li>
-											<li data-id="#">ПУМБ</li>
-											<li data-id="#">Райффайзен Банк Аваль</li>
-											<li data-id="#">Сбербанк России</li>
-											<li data-id="#">Укринбанк</li>
-											<li data-id="#"></li>
+											<li data-id="Marfin Bank">Marfin Bank</li>
+											<li data-id="OTP Bank">OTP Bank</li>
+											<li data-id="Platinum Bank">Platinum Bank</li>
+											<li data-id="UniCredit Bank">UniCredit Bank</li>
+											<li data-id="Universal Bank">Universal Bank</li>
+											<li data-id="Marfin Bank">Marfin Bank</li>
+											<li data-id="OTP Bank">OTP Bank</li>
+											<li data-id="Platinum Bank">Platinum Bank</li>
+											<li data-id="UniCredit Bank">UniCredit Bank</li>
+											<li data-id="Universal Bank">Universal Bank</li>
+											<li data-id="А-Банк">А-Банк</li>
+											<li data-id="Альфа-Банк">Альфа-Банк</li>
+											<li data-id="Банк Восток">Банк Восток</li>
+											<li data-id="Банк Михайловский">Банк Михайловский</li>
+											<li data-id="ВТБ Банк">ВТБ Банк</li>
+											<li data-id="Идея Банк">Идея Банк</li>
+											<li data-id="Киевская Русь">Киевская Русь</li>
+											<li data-id="Кредобанк">Кредобанк</li>
+											<li data-id="Надра">Надра</li>
+											<li data-id="Ощадбанк">Ощадбанк</li>
+											<li data-id="Пивденный">Пивденный</li>
+											<li data-id="Пиреус Банк">Пиреус Банк</li>
+											<li data-id="Правэкс-Банк">Правэкс-Банк</li>
+											<li data-id="ПриватБанк">ПриватБанк</li>
+											<li data-id="ПроКредит Банк">ПроКредит Банк</li>
+											<li data-id="Проминвестбанк">Проминвестбанк</li>
+											<li data-id="ПУМБ">ПУМБ</li>
+											<li data-id="Райффайзен Банк Аваль">Райффайзен Банк Аваль</li>
+											<li data-id="Сбербанк России">Сбербанк России</li>
+											<li data-id="Укринбанк">Укринбанк</li>
 										</ul>
 									</div>
 								</div>
@@ -301,8 +295,8 @@
 						<div class="form__bottom">
 							<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form9" class="btn btn_right form__choice">далее</a>
 						</div>
-					</div>				
-					<div class="form-5 form__block is-hidden" id="form9">
+					</div>		 -->		
+					<div class="js-block form__block is-hidden" data-block="form9">
 						<div class="form__info">
 							<div class="form__in">
 								<div class="form__field form__field_pay">
@@ -329,7 +323,7 @@
 							</div>
 						</div>								
 						<div class="form__bottom">
-							<a href="#form8" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">Отправить</a>
+							<a href="#" class="btn btn_left js-step" data-btn="form5">назад</a><a href="#" class="btn btn_right">Отправить</a>
 						</div>
 					</div>
 				</div>
@@ -425,21 +419,18 @@
 					</div>
 					<div class="form__body">
 						<div class="form__tabs">
-							<a href="#is-in" class="btn js-is-in is-active">Покупка</a><a href="#is-out" class="btn js-is-out">Вывод</a>							
+							<a href="#is-in" class="btn js-is-in is-active js-step" data-btn="form1">Покупка</a><a href="#is-out" class="btn js-is-out js-step" data-btn="form4">Вывод</a>							
 						</div>
 						<div class="form__content" id="is-in">
-							<div class="form-1 form__block" id="form1">
+							<div class="form-1 form__block js-block" data-block="form1">
 								<div class="form__info">
 									<ul class="form__variant">
-										<li class="is-first"><a href="#form2" class="form__choice"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
-										<li><a href="#form__card" class="form__choice"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
+										<li class="is-first"><a href="#" class="form__choice js-step" data-btn="form-cash"><i class="is-wallet"></i><span>за наличные <br>в терминале</span></a></li>
+										<li><a href="#" class="form__choice js-step" data-btn="form-card"><i class="is-card"></i><span>Пополнение через <br>Visa или mastercard</span></a></li>
 									</ul>										
-								</div>							
-								<div class="form__bottom is-hidden js-form-cash">
-									<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form2" class="btn btn_right form__choice">далее</a>
 								</div>
 							</div>
-							<div class="form-2 form__block is-hidden" id="form2">
+							<div class="js-block form__block is-hidden" data-block="form-cash">
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field">
@@ -451,57 +442,62 @@
 									</div>																		
 								</div>
 								<div class="form__bottom">
-									<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">далее</a>
+									<a href="#" class="btn btn_left js-step" data-btn="form1">назад</a><a href="#" class="btn btn_right js-step js-finish-btn" data-btn="form3">оплатить</a>
 								</div>							
 							</div>
-							<div class="form-3 form__block is-hidden" id="form3">
-								<div class="form__info">
+							<div class="form__block is-hidden js-finish js-block" data-block="form3">
+								<div class="form__info form__finish">
 									<div class="form__in">
-										<div class="form__field">
-											<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
-										</div>
-										<div class="form__field form__field_ccv">
-											<div class="form__med">
-												<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
-											</div>
-											<div class="form__lil">									
-												<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
-											</div>
-										</div>
-										<div class="form__field form__field_pay">
-											<div class="form__pay">									
-												<div class="form__50">
-													<div class="form__in_box">
-														<input type="text" class="form__input" value="ПЛАТИТЕ" onclick="if(this.value=='ПЛАТИТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПЛАТИТЕ'}">
-														<span class="form__mn">UAH</span>											
-													</div>
-												</div><div class="form__50">	
-													<div class="form__in_box">								
-														<input type="text" class="form__input" value="ПОЛУЧАЕТЕ" onclick="if(this.value=='ПОЛУЧАЕТЕ'){this.value=''}" onblur="if(this.value==''){this.value='ПОЛУЧАЕТЕ'}">
-														<span class="form__mn">BTC</span>
-													</div>
-												</div>
-											</div>
-										</div>
+										<h2>Код принят!</h2>
+										<p>ваш счет пополнен на</p>
+										<span class="form__price">6 984 грн</span>
+										<ul class="form__price-list">
+											<li>1.345 btc</li>
+											<li>1.345 btc-e</li>
+										</ul>
 									</div>
 								</div>
-								<div class="form__bottom">
-									<a href="#form2" class="btn btn_left form__choice">назад</a><a href="#form3" class="btn btn_right form__choice">Оплатить</a>
+								<div class="form__bottom form__bottom_finish">
+									<a href="#" class="to-site js-step" data-btn="form-choice2"></a>
 								</div>
 							</div>
-							<div class="form-3 form__block is-hidden" id="form__card">
+							<div class="form__block js-block js-finish-next is-hidden" data-block="form-choice2">
+								<div class="form__info">
+									<ul class="form__variant">
+										<li class="is-first"><a href="#" class="js-step" data-btn="form-add"><span>Пополнить<span>BTC-кошелек</span></span></a></li>
+										<li><a href="#" class="js-step" data-btn="form-take"><span>Получить<span>BTC-E  код</span></span></a></li>
+									</ul>										
+								</div>
+							</div>
+							<div class="js-block form__block is-hidden" data-block="form-add">
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field">
-											<input type="text" class="form__input" value="НОМЕР КАРТЫ" onclick="if(this.value=='НОМЕР КАРТЫ'){this.value=''}" onblur="if(this.value==''){this.value='НОМЕР КАРТЫ'}">
+											<input type="text" class="form__input" value="BITCOIN-АДРЕС" onclick="if(this.value=='BITCOIN-АДРЕС'){this.value=''}" onblur="if(this.value==''){this.value='BITCOIN-АДРЕС'}">
 										</div>
-										<div class="form__field form__field_ccv">
-											<div class="form__med">
-												<input type="text" class="form__input" value="СРОК ДЕЙСТВИЯ" onclick="if(this.value=='СРОК ДЕЙСТВИЯ'){this.value=''}" onblur="if(this.value==''){this.value='СРОК ДЕЙСТВИЯ'}">
-											</div>
-											<div class="form__lil">									
-												<input type="text" class="form__input" value="CCV" onclick="if(this.value=='CCV'){this.value=''}" onblur="if(this.value==''){this.value='CCV'}">
-											</div>
+									</div>																		
+								</div>
+								<div class="form__bottom">
+									<a href="#" class="btn btn_left js-step" data-btn="form-choice2">назад</a><a href="#" class="btn btn_right">оплатить</a>
+								</div>							
+							</div>
+							<div class="js-block form__block is-hidden" data-block="form-take">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field">
+											<input type="text" class="form__input" value="ВАШ E-MAIL" onclick="if(this.value=='ВАШ E-MAIL'){this.value=''}" onblur="if(this.value==''){this.value='ВАШ E-MAIL'}">
+										</div>
+									</div>																		
+								</div>
+								<div class="form__bottom">
+									<a href="#" class="btn btn_left js-step" data-btn="form-choice2">назад</a><a href="#" class="btn btn_right">оплатить</a>
+								</div>							
+							</div>
+							<div class="js-block form__block is-hidden" data-block="form-card">
+								<div class="form__info">
+									<div class="form__in">
+										<div class="form__field">
+											<input type="text" class="form__input" value="BITCOIN-АДРЕС" onclick="if(this.value=='BITCOIN-АДРЕС'){this.value=''}" onblur="if(this.value==''){this.value='BITCOIN-АДРЕС'}">
 										</div>
 										<div class="form__field form__field_pay">
 											<div class="form__pay">									
@@ -521,74 +517,67 @@
 									</div>
 								</div>
 								<div class="form__bottom">
-									<a href="#form1" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">Оплатить</a>
+									<a href="#" class="btn btn_left js-step" data-btn="form1">назад</a><a href="#" class="btn btn_right">Оплатить</a>
 								</div>
 							</div>
 						</div>
 						<div class="form__content is-hidden" id="is-out">
-							<div class="form-4 form__block" id="form4">
+							<div class="form-4 form__block js-block" data-block="form4">
 								<div class="form__info">
 									<ul class="form__variant">
-										<li class="is-first"><a href="#form5" class="form__choice"><i class="is-check"></i><span>На карту банка</span></a></li>
-										<li><a href="#form8" class="form__choice"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
+										<li class="is-first"><a href="#" class="js-step" data-btn="form5"><i class="is-check"></i><span>На карту банка</span></a></li>
+										<li><a href="#" class="js-step" data-btn="form6"><i class="is-card-arr"></i><span>Заказать карту БНК <span>(Банк национальный кредит)</span></span></a></li>
 									</ul>								
 								</div>
-								<div class="form__bottom is-hidden js-form-cash1">
-									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form5" class="btn btn_right form__choice">далее</a>
-								</div>	
-								<div class="form__bottom is-hidden js-form-cash2">
-									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form8" class="btn btn_right form__choice">далее</a>
-								</div>	
 							</div>							
-							<div class="form-5 form__block is-hidden" id="form5">
+							<div class="js-block form__block is-hidden" data-block="form5">
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field">
 											<div class="select js-select">
 												<span class="select__text js-select-text">Выберите банк</span>
-												<input type="hidden" class="js-select-input" value="0">												
+												<input type="hidden" class="js-select-input" value="0">
 												<ul class="select__list js-select-list">
-													<li data-id="#">Marfin Bank</li>
-													<li data-id="#">OTP Bank</li>
-													<li data-id="#">Platinum Bank</li>
-													<li data-id="#">UniCredit Bank</li>
-													<li data-id="#">Universal Bank</li>
-													<li data-id="#">Marfin Bank</li>
-													<li data-id="#">OTP Bank</li>
-													<li data-id="#">Platinum Bank</li>
-													<li data-id="#">UniCredit Bank</li>
-													<li data-id="#">Universal Bank</li>
-													<li data-id="#">А-Банк</li>
-													<li data-id="#">Альфа-Банк</li>
-													<li data-id="#">Банк Восток</li>
-													<li data-id="#">Банк Михайловский</li>
-													<li data-id="#">ВТБ Банк</li>
-													<li data-id="#">Идея Банк</li>
-													<li data-id="#">Киевская Русь</li>
-													<li data-id="#">Кредобанк</li>
-													<li data-id="#">Надра</li>
-													<li data-id="#">Ощадбанк</li>
-													<li data-id="#">Пивденный</li>
-													<li data-id="#">Пиреус Банк</li>
-													<li data-id="#">Правэкс-Банк</li>
-													<li data-id="#">ПриватБанк</li>
-													<li data-id="#">ПроКредит Банк</li>
-													<li data-id="#">Проминвестбанк</li>
-													<li data-id="#">ПУМБ</li>
-													<li data-id="#">Райффайзен Банк Аваль</li>
-													<li data-id="#">Сбербанк России</li>
-													<li data-id="#">Укринбанк</li>
-													<li data-id="#"></li>
+													<li data-id="Marfin Bank">Marfin Bank</li>
+													<li data-id="OTP Bank">OTP Bank</li>
+													<li data-id="Platinum Bank">Platinum Bank</li>
+													<li data-id="UniCredit Bank">UniCredit Bank</li>
+													<li data-id="Universal Bank">Universal Bank</li>
+													<li data-id="Marfin Bank">Marfin Bank</li>
+													<li data-id="OTP Bank">OTP Bank</li>
+													<li data-id="Platinum Bank">Platinum Bank</li>
+													<li data-id="UniCredit Bank">UniCredit Bank</li>
+													<li data-id="Universal Bank">Universal Bank</li>
+													<li data-id="А-Банк">А-Банк</li>
+													<li data-id="Альфа-Банк">Альфа-Банк</li>
+													<li data-id="Банк Восток">Банк Восток</li>
+													<li data-id="Банк Михайловский">Банк Михайловский</li>
+													<li data-id="ВТБ Банк">ВТБ Банк</li>
+													<li data-id="Идея Банк">Идея Банк</li>
+													<li data-id="Киевская Русь">Киевская Русь</li>
+													<li data-id="Кредобанк">Кредобанк</li>
+													<li data-id="Надра">Надра</li>
+													<li data-id="Ощадбанк">Ощадбанк</li>
+													<li data-id="Пивденный">Пивденный</li>
+													<li data-id="Пиреус Банк">Пиреус Банк</li>
+													<li data-id="Правэкс-Банк">Правэкс-Банк</li>
+													<li data-id="ПриватБанк">ПриватБанк</li>
+													<li data-id="ПроКредит Банк">ПроКредит Банк</li>
+													<li data-id="Проминвестбанк">Проминвестбанк</li>
+													<li data-id="ПУМБ">ПУМБ</li>
+													<li data-id="Райффайзен Банк Аваль">Райффайзен Банк Аваль</li>
+													<li data-id="Сбербанк России">Сбербанк России</li>
+													<li data-id="Укринбанк">Укринбанк</li>
 												</ul>
 											</div>
 										</div>
 									</div>
 								</div>								
 								<div class="form__bottom">
-									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form6" class="btn btn_right form__choice">далее</a>
+									<a href="#" class="btn btn_left js-step" data-btn="form4">назад</a><a href="#" class="btn btn_right js-step" data-btn="form9">далее</a>
 								</div>
 							</div>			
-							<div class="form-6 form__block is-hidden" id="form6">
+							<div class="js-block form__block is-hidden" data-block="form6">
 								<div class="form__info">
 									<div class="form__in">	
 										<div class="form__field">
@@ -620,10 +609,10 @@
 									</div>
 								</div>								
 								<div class="form__bottom">
-									<a href="#form5" class="btn btn_left form__choice">назад</a><a href="#form7" class="btn btn_right form__choice">далее</a>
+									<a href="#" class="btn btn_left js-step" data-btn="form4">назад</a><a href="#" class="btn btn_right js-step" data-btn="form7">далее</a>
 								</div>
 							</div>
-							<div class="form-7 form__block is-hidden" id="form7">
+							<div class="js-block form__block is-hidden" data-block="form7">
 								<div class="form__info">								
 									<div class="form__in">	
 										<div class="form__review">
@@ -648,10 +637,10 @@
 									</div>									
 								</div>								
 								<div class="form__bottom">
-									<a href="#form6" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">Отправить</a>
+									<a href="#" class="btn btn_left js-step" data-btn="form6">назад</a><a href="#" class="btn btn_right">Отправить</a>
 								</div>
 							</div>					
-							<div class="form-5 form__block is-hidden" id="form8">
+							<!-- <div class="form-5 form__block is-hidden" id="form8">
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field">
@@ -659,37 +648,36 @@
 												<span class="select__text js-select-text">Выберите банк</span>
 												<input type="hidden" class="js-select-input" value="0">
 												<ul class="select__list js-select-list">
-													<li data-id="#">Marfin Bank</li>
-													<li data-id="#">OTP Bank</li>
-													<li data-id="#">Platinum Bank</li>
-													<li data-id="#">UniCredit Bank</li>
-													<li data-id="#">Universal Bank</li>
-													<li data-id="#">Marfin Bank</li>
-													<li data-id="#">OTP Bank</li>
-													<li data-id="#">Platinum Bank</li>
-													<li data-id="#">UniCredit Bank</li>
-													<li data-id="#">Universal Bank</li>
-													<li data-id="#">А-Банк</li>
-													<li data-id="#">Альфа-Банк</li>
-													<li data-id="#">Банк Восток</li>
-													<li data-id="#">Банк Михайловский</li>
-													<li data-id="#">ВТБ Банк</li>
-													<li data-id="#">Идея Банк</li>
-													<li data-id="#">Киевская Русь</li>
-													<li data-id="#">Кредобанк</li>
-													<li data-id="#">Надра</li>
-													<li data-id="#">Ощадбанк</li>
-													<li data-id="#">Пивденный</li>
-													<li data-id="#">Пиреус Банк</li>
-													<li data-id="#">Правэкс-Банк</li>
-													<li data-id="#">ПриватБанк</li>
-													<li data-id="#">ПроКредит Банк</li>
-													<li data-id="#">Проминвестбанк</li>
-													<li data-id="#">ПУМБ</li>
-													<li data-id="#">Райффайзен Банк Аваль</li>
-													<li data-id="#">Сбербанк России</li>
-													<li data-id="#">Укринбанк</li>
-													<li data-id="#"></li>
+													<li data-id="Marfin Bank">Marfin Bank</li>
+													<li data-id="OTP Bank">OTP Bank</li>
+													<li data-id="Platinum Bank">Platinum Bank</li>
+													<li data-id="UniCredit Bank">UniCredit Bank</li>
+													<li data-id="Universal Bank">Universal Bank</li>
+													<li data-id="Marfin Bank">Marfin Bank</li>
+													<li data-id="OTP Bank">OTP Bank</li>
+													<li data-id="Platinum Bank">Platinum Bank</li>
+													<li data-id="UniCredit Bank">UniCredit Bank</li>
+													<li data-id="Universal Bank">Universal Bank</li>
+													<li data-id="А-Банк">А-Банк</li>
+													<li data-id="Альфа-Банк">Альфа-Банк</li>
+													<li data-id="Банк Восток">Банк Восток</li>
+													<li data-id="Банк Михайловский">Банк Михайловский</li>
+													<li data-id="ВТБ Банк">ВТБ Банк</li>
+													<li data-id="Идея Банк">Идея Банк</li>
+													<li data-id="Киевская Русь">Киевская Русь</li>
+													<li data-id="Кредобанк">Кредобанк</li>
+													<li data-id="Надра">Надра</li>
+													<li data-id="Ощадбанк">Ощадбанк</li>
+													<li data-id="Пивденный">Пивденный</li>
+													<li data-id="Пиреус Банк">Пиреус Банк</li>
+													<li data-id="Правэкс-Банк">Правэкс-Банк</li>
+													<li data-id="ПриватБанк">ПриватБанк</li>
+													<li data-id="ПроКредит Банк">ПроКредит Банк</li>
+													<li data-id="Проминвестбанк">Проминвестбанк</li>
+													<li data-id="ПУМБ">ПУМБ</li>
+													<li data-id="Райффайзен Банк Аваль">Райффайзен Банк Аваль</li>
+													<li data-id="Сбербанк России">Сбербанк России</li>
+													<li data-id="Укринбанк">Укринбанк</li>
 												</ul>
 											</div>
 										</div>
@@ -698,8 +686,8 @@
 								<div class="form__bottom">
 									<a href="#form4" class="btn btn_left form__choice">назад</a><a href="#form9" class="btn btn_right form__choice">далее</a>
 								</div>
-							</div>				
-							<div class="form-5 form__block is-hidden" id="form9">
+							</div>		 -->		
+							<div class="js-block form__block is-hidden" data-block="form9">
 								<div class="form__info">
 									<div class="form__in">
 										<div class="form__field form__field_pay">
@@ -726,7 +714,7 @@
 									</div>
 								</div>								
 								<div class="form__bottom">
-									<a href="#form8" class="btn btn_left form__choice">назад</a><a href="#" class="btn btn_right">Отправить</a>
+									<a href="#" class="btn btn_left js-step" data-btn="form5">назад</a><a href="#" class="btn btn_right">Отправить</a>
 								</div>
 							</div>
 						</div>

@@ -94,9 +94,9 @@ a { text-decoration: none; }
 .banner__left:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
 @media only screen and (max-width: 1024px) { .banner__left { display: block; text-align: center; margin: 0 auto; padding: 30px 0; height: auto; } }
 .banner__vert { display: inline-block; vertical-align: middle; width: 100%; }
+.banner__vert p { font-family: "Exo2 Light", Arial, sans-serif; font-size: 20px; line-height: 1.5; color: #5d8857; max-width: 475px; margin-bottom: 30px; }
+@media only screen and (max-width: 1024px) { .banner__vert p { margin: 0 auto 30px; } }
 .banner h1 { font-family: "Exo2 Semibold", Arial, sans-serif; font-size: 30px; line-height: 1; color: #f7eb96; margin-bottom: 17px; }
-.banner p { font-family: "Exo2 Light", Arial, sans-serif; font-size: 20px; line-height: 1.5; color: #5d8857; max-width: 475px; margin-bottom: 30px; }
-@media only screen and (max-width: 1024px) { .banner p { margin: 0 auto 30px; } }
 .banner__right { max-width: 400px; padding: 19px 0 0 0; width: 100%; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; display: inline-block; vertical-align: top; }
 @media only screen and (max-width: 1024px) { .banner__right { display: block; text-align: center; margin: 0 auto; } }
 .banner__info { padding: 15px 14px; background: #f7eb96; display: inline-block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
@@ -341,6 +341,7 @@ button { -webkit-appearance: none; border: none; }
 .form { width: 100%; max-width: 395px; padding: 12px 0 0 0; position: relative; margin-bottom: -65px; }
 .form.is-hide { display: none; }
 .form:after { content: ""; position: absolute; top: 12px; height: 335px; left: -6px; right: 10px; background-color: rgba(0, 0, 0, 0.15); -moz-transform: skew(178deg, 0deg); -ms-transform: skew(178deg, 0deg); -webkit-transform: skew(178deg, 0deg); -o-transform: skew(178deg, 0deg); transform: skew(178deg, 0deg); }
+@media only screen and (max-width: 1024px) { .form:after { display: none; } }
 .form:before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 12px; background: url(../img/form-top.png) no-repeat center center; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
 .form__top { background: url(../img/form-topbg.png) no-repeat center center; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; padding: 0 10px 5px; height: 60px; text-align: center; font-size: 0; position: relative; z-index: 2; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .form__top:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
@@ -399,7 +400,7 @@ button { -webkit-appearance: none; border: none; }
 .form__upload { *zoom: 1; margin: -4px; }
 .form__upload:after { content: " "; display: table; clear: both; }
 .form__upload__box { overflow: hidden; display: inline-block; position: relative; margin: 4px; cursor: pointer; }
-.form__upload__box input { float: left; position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+.form__upload__box input { float: left; position: absolute; top: 0; bottom: 0; left: 0; right: 0; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
 .form__upload__box span { font-family: "Exo2 Semibold", Arial, sans-serif; font-size: 13px; line-height: 15px; color: #9e933c; text-transform: uppercase; padding: 7px 10px; background: #f7e877; position: relative; z-index: 9; display: block; }
 .form__variant a { display: block; padding: 32px 65px 32px 25px; text-align: center; font-size: 0; position: relative; text-align: left; }
 .form__variant a:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
@@ -413,7 +414,7 @@ button { -webkit-appearance: none; border: none; }
 .form__variant a i.is-card-arr { background: url('../img/icons-saf34ce46c2.png') 0 -56px no-repeat; width: 48px; height: 38px; }
 .form__variant a span { font-size: 20px; line-height: 1; color: #9e933c; text-transform: uppercase; font-family: "Exo2 Light", Arial, sans-serif; max-width: 220px; margin: 0; }
 @media only screen and (max-width: 480px) { .form__variant a span { display: block; padding: 20px 0 0 0; } }
-.form__variant a span span { font-size: 14px; }
+.form__variant a span span { font-size: 14px; display: block; }
 @media only screen and (max-width: 480px) { .form__variant a span span { padding: 0; } }
 .form__variant li { display: block; position: relative; }
 .form__variant li.is-first { padding-bottom: 1px; -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); margin-bottom: 1px; }
@@ -431,3 +432,14 @@ button { -webkit-appearance: none; border: none; }
 .form .select__list { position: absolute; display: none; top: 100%; left: -1px; right: -1px; z-index: 100; overflow: hidden; background-color: rgba(0, 0, 0, 0.1); border: 1px solid #f7e877; -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.45); -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.45); box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.45); padding: 3px 0; height: 115px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; overflow: auto; }
 .form .select__list li { cursor: pointer; display: block; text-align: left; padding: 0 1px; color: #fffc9c; font-size: 16px; font-family: "Exo2 Semibold", Arial, sans-serif; line-height: 22px; padding: 0 13px 0 13px; display: block; text-transform: uppercase; }
 .form .select__list li:hover { background: #eddc34; }
+.form__finish .form__in { text-align: center; }
+.form__finish h2 { color: #9e933c; font-family: "Exo2 Semibold", Arial, sans-serif; font-size: 27px; line-height: 1; text-transform: uppercase; margin-bottom: 28px; }
+.form__finish p { font-size: 16px; line-height: 1; color: #9e933c; font-family: "Exo2 Semibold", Arial, sans-serif; text-transform: uppercase; margin-bottom: 0; }
+.form__price { color: #9e933c; font-size: 50px; line-height: 1; font-family: "Exo2 Semibold", Arial, sans-serif; text-transform: uppercase; margin-bottom: 10px; display: block; }
+.form__price-list { font-size: 0; }
+.form__price-list li { font-family: "Exo2 Semibold", Arial, sans-serif; font-size: 20px; line-height: 1.25; color: #9e933c; display: inline-block; vertical-align: top; text-transform: uppercase; }
+.form__price-list li:before { content: "/"; display: inline-block; vertical-align: top; margin: 0 5px; width: auto; }
+.form__price-list li:first-child:before { display: none; }
+.form__bottom_finish { height: 66px; text-align: center; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 6px 10px; background: url(../img/form-bottom.png) no-repeat; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-position: bottom center; }
+.form__bottom_finish:before { display: none; }
+.form .to-site { display: inline-block; background: url("../img/svg/form-arr.svg") no-repeat 0 0; -moz-background-size: 34px 34px; -o-background-size: 34px 34px; -webkit-background-size: 34px 34px; background-size: 34px 34px; width: 34px; height: 34px; display: inline-block; vertical-align: middle; }

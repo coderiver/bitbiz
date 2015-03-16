@@ -302,4 +302,8 @@ head.ready(function() {
 		$item.not($currItem).addClass('is-hidden');
 		return false;
 	});
+
+	$('.js-topper-close').on('click', function() {
+		$('.js-topper').slideToggle('fast');
+	});
 });

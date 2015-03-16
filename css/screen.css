@@ -373,12 +373,13 @@ button { -webkit-appearance: none; border: none; }
 .form__bottom { position: relative; z-index: 2; }
 .form__bottom:before { position: absolute; left: 50%; top: 0; bottom: 0; border-right: 1px solid #e5db34; content: ""; z-index: 2; }
 .form__bottom.is-hidden { display: none; }
-.form__bottom .btn { padding: 19px 20px; color: #ecda34; }
+.form__bottom .btn { padding: 0; line-height: 60px; color: #ecda34; }
 .form__bottom .btn:hover { color: #9e933c; }
 .form__bottom .btn_left { background: #eddc34; background: url(../img/form-btn-left-hover.png) no-repeat; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-position: bottom left; }
 .form__bottom .btn_left:hover { background-image: url(../img/form-btn-left.png); }
 .form__bottom .btn_right { background: #c7bb2c; background: url(../img/form-btn-right-hover.png) no-repeat; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-position: bottom right; }
 .form__bottom .btn_right:hover { background-image: url(../img/form-btn-right.png); }
+.form__bottom .btn span { line-height: 1; display: inline-block; vertical-align: middle; }
 .form__in { padding: 25px 23px 12px; text-align: left; }
 .form__field { position: relative; font-size: 0; }
 .form__field_ccv { padding: 0 70px 0 0; }
@@ -402,7 +403,6 @@ button { -webkit-appearance: none; border: none; }
 .form__upload { *zoom: 1; margin: -4px; }
 .form__upload:after { content: " "; display: table; clear: both; }
 .form__upload__box { overflow: hidden; display: inline-block; position: relative; margin: 4px; cursor: pointer; }
-.form__upload__box input { float: left; position: absolute; top: 0; bottom: 0; left: 0; right: 0; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0); opacity: 0; }
 .form__upload__box a { font-family: "Exo2 Semibold", Arial, sans-serif; font-size: 13px; line-height: 15px; color: #9e933c; text-transform: uppercase; padding: 7px 10px; background: #f7e877; position: relative; z-index: 9; display: block; }
 .form__variant a { display: block; padding: 32px 65px 32px 25px; text-align: center; font-size: 0; position: relative; text-align: left; }
 .form__variant a:before { content: ""; display: inline-block; vertical-align: middle; width: 0; height: 100%; }
